@@ -98,12 +98,18 @@ export const ContactSection = () => {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="h-48 bg-muted rounded-xl flex items-center justify-center border border-border">
-              <div className="text-center text-muted-foreground">
-                <MapPin className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                <p className="text-sm">Mapa lokalizacji</p>
-              </div>
+            {/* Google Maps */}
+            <div className="h-64 rounded-xl overflow-hidden border border-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.3913185268424!2d21.00732731580091!3d52.23194506437542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokalizacja CleanPro na mapie"
+              />
             </div>
           </div>
 
@@ -112,8 +118,8 @@ export const ContactSection = () => {
             <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-secondary" />
+                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     Dziękujemy za wiadomość!
@@ -173,6 +179,8 @@ export const ContactSection = () => {
                       <option value="mieszkanie">Sprzątanie mieszkania</option>
                       <option value="biurowiec">Sprzątanie biurowca</option>
                       <option value="remont">Sprzątanie po remoncie</option>
+                      <option value="hotel">Sprzątanie hotelu</option>
+                      <option value="hala">Sprzątanie hal i magazynów</option>
                       <option value="inne">Inne</option>
                     </select>
                   </div>
@@ -188,10 +196,10 @@ export const ContactSection = () => {
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <input type="checkbox" required className="mt-1" />
-                    <span className="text-sm text-muted-foreground">
+                    <input type="checkbox" required className="mt-1" id="consent" />
+                    <label htmlFor="consent" className="text-sm text-muted-foreground">
                       Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie. *
-                    </span>
+                    </label>
                   </div>
 
                   <Button

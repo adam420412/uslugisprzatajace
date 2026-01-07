@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import cleanOffice from "@/assets/clean-office.jpg";
+import cleanApartment from "@/assets/clean-apartment.jpg";
+import cleanLobby from "@/assets/clean-lobby.jpg";
+import cleanHotel from "@/assets/clean-hotel.jpg";
 
 const projects = [
   {
@@ -7,28 +12,32 @@ const projects = [
     category: "Sprzątanie biurowców",
     description: "Kompleksowa obsługa 15-piętrowego biurowca. Codzienny serwis dla 500+ pracowników.",
     stats: "8 000 m²",
-    gradient: "from-primary to-secondary",
+    image: cleanLobby,
+    href: "/uslugi/sprzatanie-biurowcow",
   },
   {
     title: "Apartament premium",
     category: "Sprzątanie mieszkań",
     description: "Regularne sprzątanie luksusowego apartamentu. Dbałość o każdy detal.",
     stats: "180 m²",
-    gradient: "from-secondary to-primary",
+    image: cleanApartment,
+    href: "/uslugi/sprzatanie-mieszkan",
   },
   {
     title: "Sieć hoteli",
     category: "Sprzątanie hoteli",
     description: "Obsługa 3 hoteli w centrum miasta. Codzienne sprzątanie 200+ pokoi.",
     stats: "200+ pokoi",
-    gradient: "from-primary to-accent",
+    image: cleanHotel,
+    href: "/uslugi/sprzatanie-hoteli",
   },
   {
-    title: "Magazyn logistyczny",
-    category: "Sprzątanie hal",
-    description: "Utrzymanie czystości w dużym centrum logistycznym. Praca w systemie zmianowym.",
-    stats: "12 000 m²",
-    gradient: "from-accent to-secondary",
+    title: "Biuro korporacyjne",
+    category: "Sprzątanie biur",
+    description: "Utrzymanie czystości w nowoczesnym biurze open-space dla firmy IT.",
+    stats: "1 200 m²",
+    image: cleanOffice,
+    href: "/uslugi/sprzatanie-biur",
   },
 ];
 
@@ -57,13 +66,18 @@ export const PortfolioSection = () => {
               key={index}
               className="group relative overflow-hidden rounded-2xl bg-card border border-border"
             >
-              {/* Gradient placeholder for image */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+              {/* Image */}
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
               </div>
               
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 relative">
                 <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                   {project.category}
                 </span>
@@ -77,6 +91,13 @@ export const PortfolioSection = () => {
                   <span className="text-2xl font-bold text-primary">
                     {project.stats}
                   </span>
+                  <Link 
+                    to={project.href}
+                    className="text-sm font-medium text-primary hover:underline flex items-center gap-1"
+                  >
+                    Zobacz usługę
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
                 </div>
               </div>
             </article>

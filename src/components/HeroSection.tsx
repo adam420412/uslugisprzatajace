@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import heroImage from "@/assets/hero-cleaning-team.jpg";
 
 const benefits = [
   "Bezpłatna wycena w 24h",
@@ -10,8 +11,15 @@ const benefits = [
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background - Dark elegant */}
-      <div className="absolute inset-0 bg-secondary" />
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Profesjonalny zespół sprzątający CleanPro" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/90" />
+      </div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
