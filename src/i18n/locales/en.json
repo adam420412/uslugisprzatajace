@@ -396,5 +396,201 @@
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms of Service",
     "rights": "All rights reserved."
+  },
+  "servicePage": {
+    "backToServices": "Back to all services",
+    "cleaningServices": "Cleaning Services",
+    "orderFreeQuote": "Get a Free Quote",
+    "benefitsTitle": "Benefits for You",
+    "qualityGuarantee": "Quality Guarantee",
+    "punctuality": "Punctuality",
+    "ecoProducts": "Eco Products",
+    "experiencedTeam": "Experienced Team",
+    "serviceIncludes": "What does the service include?",
+    "cooperationProcess": "How does the cooperation work?",
+    "serviceNotFound": "Service not found",
+    "backToHome": "Back to Home",
+    "services": {
+      "sprzatanie-biur": {
+        "title": "Office Cleaning",
+        "metaTitle": "Professional Office Cleaning Warsaw | CleanPro",
+        "metaDescription": "Comprehensive office cleaning services in Warsaw. Daily cleaning, disinfection, window washing. Free quote. Call now!",
+        "heroDescription": "We provide professional and regular office cleaning that guarantees a clean and hygienic work environment for your employees.",
+        "pricing": "from 6 PLN/m²",
+        "benefits": [
+          "Increased employee productivity",
+          "Positive first impression for clients",
+          "Fewer sick days in the team",
+          "Longer lifespan of furniture and equipment",
+          "Flexible cleaning hours",
+          "Dedicated, trusted cleaning team"
+        ],
+        "features": [
+          { "title": "Daily Cleaning", "description": "Vacuuming, floor washing, emptying bins, wiping desks and surfaces." },
+          { "title": "Surface Disinfection", "description": "Regular disinfection of handles, switches, phones, and shared surfaces." },
+          { "title": "Office Kitchen Cleaning", "description": "Dishwashing, refrigerator cleaning, coffee machines and microwaves." },
+          { "title": "Window Cleaning", "description": "Regular window cleaning inside and outside the building." },
+          { "title": "Day Service", "description": "Replenishing soap, toilet paper, and towels during the day." },
+          { "title": "Carpet Cleaning", "description": "Periodic deep cleaning of carpets and upholstery." }
+        ],
+        "process": [
+          "Free visit and needs assessment",
+          "Preparation of individual offer",
+          "Setting the cleaning schedule",
+          "Assignment of dedicated team",
+          "Regular quality controls"
+        ]
+      },
+      "sprzatanie-mieszkan": {
+        "title": "Apartment Cleaning",
+        "metaTitle": "Professional Apartment Cleaning Warsaw | CleanPro",
+        "metaDescription": "Apartment and house cleaning in Warsaw. One-time and regular services. Eco-friendly products, flexible schedules. Order now!",
+        "heroDescription": "Leave the cleaning to us and enjoy time with your family. We provide comprehensive apartment cleaning with attention to every detail.",
+        "pricing": "from 8 PLN/m²",
+        "benefits": [
+          "More time for yourself and family",
+          "Clean and hygienic apartment",
+          "Eco-friendly products safe for children and pets",
+          "Flexible schedules tailored to you",
+          "Dedicated, trusted cleaner",
+          "Satisfaction guarantee"
+        ],
+        "features": [
+          { "title": "Complete Cleaning", "description": "Vacuuming, floor washing, dusting all surfaces." },
+          { "title": "Bathroom and Kitchen", "description": "Thorough cleaning and disinfection of bathroom, kitchen and appliances." },
+          { "title": "Window Cleaning", "description": "Cleaning windows, windowsills, and frames." },
+          { "title": "Ironing", "description": "Ironing of clothes and bedding on request." },
+          { "title": "Bedding Change", "description": "Changing bedding and making beds." },
+          { "title": "Post-Party Cleaning", "description": "Quick cleaning after parties and events." }
+        ],
+        "process": [
+          "Phone contact or via form",
+          "Setting scope of work and date",
+          "Cleaning at the agreed time",
+          "Quality check before leaving",
+          "Settlement and invoice"
+        ]
+      },
+      "sprzatanie-biurowcow": {
+        "title": "Building Cleaning",
+        "metaTitle": "Office Building and Complex Cleaning | CleanPro Warsaw",
+        "metaDescription": "Professional service for large office buildings. 24/7 service, permanent teams, comprehensive cleaning. Free quote!",
+        "heroDescription": "We specialize in comprehensive service of large office buildings and business complexes. We provide service at the highest level.",
+        "pricing": "individual quote",
+        "benefits": [
+          "24/7 round-the-clock service",
+          "Dedicated building manager",
+          "Permanent, trained teams",
+          "Reporting and quality control",
+          "Fast response to requests",
+          "Comprehensive facility service"
+        ],
+        "features": [
+          { "title": "Day Service", "description": "Continuous service during office hours - replenishing, cleaning, responding." },
+          { "title": "Night Cleaning", "description": "Comprehensive cleaning after hours without disrupting operations." },
+          { "title": "Common Areas", "description": "Maintaining cleanliness in reception, corridors, elevators, and staircases." },
+          { "title": "Facade and Window Cleaning", "description": "Professional window and facade cleaning with specialized equipment." },
+          { "title": "Green Area Care", "description": "Plant watering, indoor greenery maintenance." },
+          { "title": "Event Service", "description": "Cleaning before and after corporate events in the building." }
+        ],
+        "process": [
+          "Building audit and needs analysis",
+          "Preparation of comprehensive offer",
+          "Negotiation and contract signing",
+          "Implementation of team and procedures",
+          "Regular quality audits"
+        ]
+      },
+      "sprzatanie-po-remoncie": {
+        "title": "Post-Renovation Cleaning",
+        "metaTitle": "Post-Renovation and Construction Cleaning | CleanPro Warsaw",
+        "metaDescription": "Professional post-renovation, construction, and finishing cleaning. Dust, glue, paint removal. Fast and thorough. Call now!",
+        "heroDescription": "Renovation is only half the job. Let us finish the work - we'll remove dust, dirt, and construction residues.",
+        "pricing": "from 15 PLN/m²",
+        "benefits": [
+          "Thorough removal of construction dust",
+          "Removal of glue and paint residues",
+          "Window cleaning after renovation",
+          "Professional equipment and products",
+          "Fast execution",
+          "Ready to move in"
+        ],
+        "features": [
+          { "title": "Dust Removal", "description": "Thorough dusting of all surfaces, crevices, and hard-to-reach places." },
+          { "title": "Window Cleaning", "description": "Removal of protective films, cleaning glass, frames, and sills." },
+          { "title": "Floor Cleaning", "description": "Washing and polishing floors, removing mortar and glue residues." },
+          { "title": "Bathroom Disinfection", "description": "Thorough cleaning and disinfection of the new bathroom." },
+          { "title": "Stain Removal", "description": "Removing paint, glue, silicone stains from various surfaces." },
+          { "title": "Waste Removal", "description": "Removal of construction material residues and packaging." }
+        ],
+        "process": [
+          "Assessment of post-renovation work scope",
+          "Quote based on area and condition",
+          "Setting execution date",
+          "Comprehensive cleaning",
+          "Acceptance and quality control"
+        ]
+      },
+      "sprzatanie-hoteli": {
+        "title": "Hotel Cleaning",
+        "metaTitle": "Professional Hotel and Apartment Cleaning | CleanPro",
+        "metaDescription": "Comprehensive hotel and rental apartment service. Room cleaning, bedding change, laundry. Call for a quote!",
+        "heroDescription": "We provide comprehensive service for hotels and short-term rentals. Your guests deserve perfect cleanliness.",
+        "pricing": "individual quote",
+        "benefits": [
+          "Experience in the hotel industry",
+          "Flexible working hours",
+          "Quick room turnover",
+          "High hygiene standards",
+          "Laundry and ironing included",
+          "Dedicated coordinator"
+        ],
+        "features": [
+          { "title": "Room Cleaning", "description": "Comprehensive hotel room cleaning according to procedures." },
+          { "title": "Bedding Change", "description": "Professional hotel bedding change and making." },
+          { "title": "Laundry and Ironing", "description": "Washing bedding, towels, and ironing in our laundry." },
+          { "title": "Amenities Replenishment", "description": "Replenishing cosmetics, tea, coffee, and information materials." },
+          { "title": "Common Areas", "description": "Maintaining cleanliness in reception, corridors, and restaurant." },
+          { "title": "Express Cleaning", "description": "Quick room turnover between guests." }
+        ],
+        "process": [
+          "Analysis of hotel needs",
+          "Adapting procedures to standards",
+          "Training of dedicated team",
+          "Implementation of quality system",
+          "Regular audits and reports"
+        ]
+      },
+      "sprzatanie-hal": {
+        "title": "Industrial & Warehouse Cleaning",
+        "metaTitle": "Production Hall and Warehouse Cleaning | CleanPro",
+        "metaDescription": "Professional cleaning of production halls, warehouses, and plants. Floor cleaning, machine washing. Free quote!",
+        "heroDescription": "We specialize in maintaining cleanliness in production halls, warehouses, and industrial plants. Safety and cleanliness are our priority.",
+        "pricing": "from 4.5 PLN/m²",
+        "benefits": [
+          "Experience in industry",
+          "Shift system work",
+          "Professional industrial equipment",
+          "Compliance with safety regulations",
+          "Waste disposal",
+          "Flexible schedules"
+        ],
+        "features": [
+          { "title": "Floor Cleaning", "description": "Mechanical cleaning and polishing of industrial floors." },
+          { "title": "Machine Cleaning", "description": "Cleaning of machines and production equipment." },
+          { "title": "Shelf Cleaning", "description": "Dusting and cleaning warehouse shelves." },
+          { "title": "Waste Disposal", "description": "Segregation and disposal of industrial waste." },
+          { "title": "Window and Skylight Cleaning", "description": "Cleaning glazing at heights." },
+          { "title": "Disinfection", "description": "Disinfection of social and sanitary rooms." }
+        ],
+        "process": [
+          "Site visit and risk assessment",
+          "Preparation of cleaning plan",
+          "Safety training for team",
+          "Execution according to procedures",
+          "Reporting and control"
+        ]
+      }
+    }
   }
 }
