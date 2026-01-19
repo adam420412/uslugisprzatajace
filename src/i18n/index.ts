@@ -12,18 +12,23 @@ const resources = {
   en: { translation: en },
 };
 
+// Initialize i18n synchronously before React renders
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'pl',
+    lng: localStorage.getItem('i18nextLng') || 'pl',
     interpolation: {
       escapeValue: false,
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
+    },
+    react: {
+      useSuspense: false,
     },
   });
 
