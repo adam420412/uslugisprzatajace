@@ -396,5 +396,201 @@
     "privacyPolicy": "Datenschutz",
     "terms": "AGB",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "servicePage": {
+    "backToServices": "Zurück zu allen Dienstleistungen",
+    "cleaningServices": "Reinigungsdienste",
+    "orderFreeQuote": "Kostenloses Angebot anfordern",
+    "benefitsTitle": "Ihre Vorteile",
+    "qualityGuarantee": "Qualitätsgarantie",
+    "punctuality": "Pünktlichkeit",
+    "ecoProducts": "Öko-Produkte",
+    "experiencedTeam": "Erfahrenes Team",
+    "serviceIncludes": "Was beinhaltet der Service?",
+    "cooperationProcess": "Wie sieht die Zusammenarbeit aus?",
+    "serviceNotFound": "Service nicht gefunden",
+    "backToHome": "Zurück zur Startseite",
+    "services": {
+      "sprzatanie-biur": {
+        "title": "Büroreinigung",
+        "metaTitle": "Professionelle Büroreinigung Warschau | CleanPro",
+        "metaDescription": "Umfassende Büroreinigungsdienste in Warschau. Tägliche Reinigung, Desinfektion, Fensterreinigung. Kostenloses Angebot. Rufen Sie an!",
+        "heroDescription": "Wir bieten professionelle und regelmäßige Büroreinigung, die eine saubere und hygienische Arbeitsumgebung für Ihre Mitarbeiter garantiert.",
+        "pricing": "ab 6 PLN/m²",
+        "benefits": [
+          "Erhöhte Mitarbeiterproduktivität",
+          "Positiver erster Eindruck für Kunden",
+          "Weniger Krankheitstage im Team",
+          "Längere Lebensdauer von Möbeln und Ausstattung",
+          "Flexible Reinigungszeiten",
+          "Festes, vertrauenswürdiges Reinigungsteam"
+        ],
+        "features": [
+          { "title": "Tägliche Reinigung", "description": "Staubsaugen, Bodenwischen, Mülleimer leeren, Schreibtische und Oberflächen wischen." },
+          { "title": "Oberflächendesinfektion", "description": "Regelmäßige Desinfektion von Türklinken, Schaltern, Telefonen und gemeinsam genutzten Oberflächen." },
+          { "title": "Büroküchenreinigung", "description": "Geschirrspülen, Kühlschrankreinigung, Kaffeemaschinen und Mikrowellen." },
+          { "title": "Fensterreinigung", "description": "Regelmäßige Fensterreinigung innen und außen." },
+          { "title": "Tagesservice", "description": "Auffüllen von Seife, Toilettenpapier und Handtüchern tagsüber." },
+          { "title": "Teppichreinigung", "description": "Regelmäßige Tiefenreinigung von Teppichen und Polstermöbeln." }
+        ],
+        "process": [
+          "Kostenloser Besuch und Bedarfsanalyse",
+          "Erstellung eines individuellen Angebots",
+          "Festlegung des Reinigungsplans",
+          "Zuweisung eines festen Teams",
+          "Regelmäßige Qualitätskontrollen"
+        ]
+      },
+      "sprzatanie-mieszkan": {
+        "title": "Wohnungsreinigung",
+        "metaTitle": "Professionelle Wohnungsreinigung Warschau | CleanPro",
+        "metaDescription": "Wohnungs- und Hausreinigung in Warschau. Einmalige und regelmäßige Dienste. Ökologische Mittel, flexible Termine. Jetzt bestellen!",
+        "heroDescription": "Überlassen Sie uns die Reinigung und genießen Sie Zeit mit Ihrer Familie. Wir bieten umfassende Wohnungsreinigung mit Liebe zum Detail.",
+        "pricing": "ab 8 PLN/m²",
+        "benefits": [
+          "Mehr Zeit für sich und Ihre Familie",
+          "Saubere und hygienische Wohnung",
+          "Ökologische Mittel sicher für Kinder und Haustiere",
+          "Flexible Termine nach Ihren Wünschen",
+          "Feste, vertrauenswürdige Reinigungskraft",
+          "Zufriedenheitsgarantie"
+        ],
+        "features": [
+          { "title": "Komplette Reinigung", "description": "Staubsaugen, Bodenwischen, Staubwischen auf allen Oberflächen." },
+          { "title": "Bad und Küche", "description": "Gründliche Reinigung und Desinfektion des Badezimmers, Küchenreinigung und Geräte." },
+          { "title": "Fensterreinigung", "description": "Reinigung von Fenstern, Fensterbänken und Rahmen." },
+          { "title": "Bügeln", "description": "Auf Wunsch Bügeln von Kleidung und Bettwäsche." },
+          { "title": "Bettwäschewechsel", "description": "Bettwäschewechsel und Bettenmachen." },
+          { "title": "Reinigung nach Partys", "description": "Schnelle Reinigung nach Feiern und Partys." }
+        ],
+        "process": [
+          "Telefonischer Kontakt oder über Formular",
+          "Festlegung des Arbeitsumfangs und Termins",
+          "Reinigung zur vereinbarten Zeit",
+          "Qualitätskontrolle vor dem Verlassen",
+          "Abrechnung und Rechnung"
+        ]
+      },
+      "sprzatanie-biurowcow": {
+        "title": "Gebäudereinigung",
+        "metaTitle": "Reinigung von Bürogebäuden und Komplexen | CleanPro Warschau",
+        "metaDescription": "Professioneller Service für große Bürogebäude. 24/7 Service, feste Teams, umfassende Reinigung. Kostenloses Angebot!",
+        "heroDescription": "Wir sind spezialisiert auf die umfassende Betreuung großer Bürogebäude und Geschäftskomplexe. Wir bieten Service auf höchstem Niveau.",
+        "pricing": "individuelles Angebot",
+        "benefits": [
+          "24/7 Rund-um-die-Uhr-Service",
+          "Dedizierter Gebäudemanager",
+          "Feste, geschulte Teams",
+          "Berichterstattung und Qualitätskontrolle",
+          "Schnelle Reaktion auf Meldungen",
+          "Umfassender Facility-Service"
+        ],
+        "features": [
+          { "title": "Tagesservice", "description": "Kontinuierlicher Service während der Bürozeiten - Auffüllen, Reinigen, Reagieren." },
+          { "title": "Nachtreinigung", "description": "Umfassende Reinigung nach Geschäftsschluss ohne Störung des Betriebs." },
+          { "title": "Gemeinschaftsbereiche", "description": "Sauberkeit in Empfangsbereichen, Fluren, Aufzügen und Treppenhäusern." },
+          { "title": "Fassaden- und Fensterreinigung", "description": "Professionelle Fenster- und Fassadenreinigung mit Spezialausrüstung." },
+          { "title": "Grünflächenpflege", "description": "Pflanzenbewässerung, Pflege der Innenraumbegrünung." },
+          { "title": "Event-Service", "description": "Reinigung vor und nach Firmenveranstaltungen im Gebäude." }
+        ],
+        "process": [
+          "Gebäudeaudit und Bedarfsanalyse",
+          "Erstellung eines umfassenden Angebots",
+          "Verhandlung und Vertragsabschluss",
+          "Implementierung von Team und Verfahren",
+          "Regelmäßige Qualitätsaudits"
+        ]
+      },
+      "sprzatanie-po-remoncie": {
+        "title": "Baureinigung",
+        "metaTitle": "Baureinigung nach Renovierung | CleanPro Warschau",
+        "metaDescription": "Professionelle Reinigung nach Renovierung, Bau und Ausbau. Entfernung von Staub, Kleber, Farbe. Schnell und gründlich. Rufen Sie an!",
+        "heroDescription": "Die Renovierung ist erst die halbe Arbeit. Lassen Sie uns das Werk vollenden - wir entfernen Staub, Schmutz und Baurückstände.",
+        "pricing": "ab 15 PLN/m²",
+        "benefits": [
+          "Gründliche Entfernung von Baustaub",
+          "Entfernung von Kleber- und Farbresten",
+          "Fensterreinigung nach Renovierung",
+          "Professionelle Ausrüstung und Mittel",
+          "Schnelle Ausführung",
+          "Bezugsfertig"
+        ],
+        "features": [
+          { "title": "Staubentfernung", "description": "Gründliches Entstauben aller Oberflächen, Ritzen und schwer zugänglicher Stellen." },
+          { "title": "Fensterreinigung", "description": "Entfernung von Schutzfolien, Reinigung von Scheiben, Rahmen und Fensterbänken." },
+          { "title": "Bodenreinigung", "description": "Waschen und Polieren von Böden, Entfernung von Mörtel- und Kleberresten." },
+          { "title": "Badezimmerdesinfektion", "description": "Gründliche Reinigung und Desinfektion des neuen Badezimmers." },
+          { "title": "Fleckenentfernung", "description": "Entfernung von Farb-, Kleber- und Silikonflecken von verschiedenen Oberflächen." },
+          { "title": "Abfallentsorgung", "description": "Entfernung von Baumaterialresten und Verpackungen." }
+        ],
+        "process": [
+          "Beurteilung des Arbeitsumfangs nach Renovierung",
+          "Preiskalkulation basierend auf Fläche und Zustand",
+          "Terminvereinbarung",
+          "Umfassende Reinigung",
+          "Abnahme und Qualitätskontrolle"
+        ]
+      },
+      "sprzatanie-hoteli": {
+        "title": "Hotelreinigung",
+        "metaTitle": "Professionelle Hotel- und Apartmentreinigung | CleanPro",
+        "metaDescription": "Umfassender Service für Hotels und Ferienwohnungen. Zimmerreinigung, Bettwäschewechsel, Wäsche. Rufen Sie für ein Angebot an!",
+        "heroDescription": "Wir bieten umfassende Betreuung von Hotels und Kurzzeitvermietungen. Ihre Gäste verdienen makellose Sauberkeit.",
+        "pricing": "individuelles Angebot",
+        "benefits": [
+          "Erfahrung in der Hotelbranche",
+          "Flexible Arbeitszeiten",
+          "Schneller Zimmerwechsel",
+          "Hohe Hygienestandards",
+          "Wäsche und Bügeln inklusive",
+          "Dedizierter Koordinator"
+        ],
+        "features": [
+          { "title": "Zimmerreinigung", "description": "Umfassende Reinigung von Hotelzimmern gemäß Verfahren." },
+          { "title": "Bettwäschewechsel", "description": "Professioneller Wechsel und Bezug von Hotelbettwäsche." },
+          { "title": "Wäsche und Bügeln", "description": "Waschen von Bettwäsche, Handtüchern und Bügeln in unserer Wäscherei." },
+          { "title": "Amenities auffüllen", "description": "Auffüllen von Kosmetik, Tee, Kaffee und Informationsmaterialien." },
+          { "title": "Gemeinschaftsbereiche", "description": "Sauberkeit in Rezeption, Fluren und Restaurant." },
+          { "title": "Express-Reinigung", "description": "Schneller Zimmerwechsel zwischen Gästen." }
+        ],
+        "process": [
+          "Analyse der Hotelbedürfnisse",
+          "Anpassung der Verfahren an Standards",
+          "Schulung des dedizierten Teams",
+          "Implementierung des Qualitätssystems",
+          "Regelmäßige Audits und Berichte"
+        ]
+      },
+      "sprzatanie-hal": {
+        "title": "Hallen- und Lagerreinigung",
+        "metaTitle": "Reinigung von Produktionshallen und Lagern | CleanPro",
+        "metaDescription": "Professionelle Reinigung von Produktionshallen, Lagern und Betrieben. Bodenreinigung, Maschinenreinigung. Kostenloses Angebot!",
+        "heroDescription": "Wir sind spezialisiert auf die Sauberkeit in Produktionshallen, Lagern und Industriebetrieben. Sicherheit und Sauberkeit haben Priorität.",
+        "pricing": "ab 4,5 PLN/m²",
+        "benefits": [
+          "Erfahrung in der Industrie",
+          "Arbeit im Schichtsystem",
+          "Professionelle Industrieausrüstung",
+          "Einhaltung der Arbeitsschutzvorschriften",
+          "Abfallentsorgung",
+          "Flexible Termine"
+        ],
+        "features": [
+          { "title": "Bodenreinigung", "description": "Maschinelle Reinigung und Polieren von Industrieböden." },
+          { "title": "Maschinenreinigung", "description": "Reinigung von Maschinen und Produktionsanlagen." },
+          { "title": "Regalreinigung", "description": "Entstauben und Reinigen von Lagerregalen." },
+          { "title": "Abfallentsorgung", "description": "Trennung und Entsorgung von Industrieabfällen." },
+          { "title": "Fenster- und Oberlichteinigung", "description": "Reinigung von Verglasungen in der Höhe." },
+          { "title": "Desinfektion", "description": "Desinfektion von Sozial- und Sanitärräumen." }
+        ],
+        "process": [
+          "Vor-Ort-Besichtigung und Risikobewertung",
+          "Erstellung des Reinigungsplans",
+          "Arbeitsschutz-Schulung des Teams",
+          "Ausführung gemäß Verfahren",
+          "Berichterstattung und Kontrolle"
+        ]
+      }
+    }
   }
 }
