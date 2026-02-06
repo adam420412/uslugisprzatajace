@@ -1,4 +1,4 @@
-import { Home, Phone, Mail, MapPin } from "lucide-react";
+import { Home, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -31,43 +31,52 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground/80">
+    <footer className="bg-secondary text-secondary-foreground">
+      {/* Main footer content */}
       <div className="container-narrow mx-auto px-4 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company info */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Home className="w-5 h-5 text-primary-foreground" />
+            <Link to="/" className="inline-flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center">
+                <Home className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-secondary-foreground">Dom Blasku</span>
+              <span className="text-2xl font-bold text-secondary-foreground">Dom Blasku</span>
             </Link>
-            <p className="text-secondary-foreground/60 mb-6 max-w-sm">
+            <p className="text-secondary-foreground/60 mb-8 max-w-sm text-lg">
               {t("footer.description")}
             </p>
-            <div className="space-y-3">
-              <a href="tel:+48123456789" className="flex items-center gap-3 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4" />
-                +48 123 456 789
+            
+            {/* Contact info */}
+            <div className="space-y-4">
+              <a href="tel:+48123456789" className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span className="font-medium">+48 123 456 789</span>
               </a>
-              <a href="mailto:kontakt@domblasku.pl" className="flex items-center gap-3 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4" />
-                kontakt@domblasku.pl
+              <a href="mailto:kontakt@domblasku.pl" className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <span className="font-medium">kontakt@domblasku.pl</span>
               </a>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4" />
-                ul. Czysta 15, 00-001 Warszawa
+              <div className="flex items-center gap-3 text-secondary-foreground/60">
+                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span>ul. Czysta 15, 00-001 Warszawa</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-secondary-foreground font-semibold mb-4">{t("footer.services")}</h4>
-            <ul className="space-y-2">
+            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.services")}</h4>
+            <ul className="space-y-3">
               {footerLinks.uslugi.map((link, index) => (
                 <li key={index}>
-                  <Link to={link.href} className="hover:text-primary transition-colors">
+                  <Link to={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
                     {t(link.labelKey)}
                   </Link>
                 </li>
@@ -77,11 +86,11 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-secondary-foreground font-semibold mb-4">{t("footer.company")}</h4>
-            <ul className="space-y-2">
+            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.company")}</h4>
+            <ul className="space-y-3">
               {footerLinks.firma.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:text-primary transition-colors">
+                  <a href={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
                     {t(link.labelKey)}
                   </a>
                 </li>
@@ -91,11 +100,11 @@ export const Footer = () => {
 
           {/* Help */}
           <div>
-            <h4 className="text-secondary-foreground font-semibold mb-4">{t("footer.help", "Pomoc")}</h4>
-            <ul className="space-y-2">
+            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.help", "Pomoc")}</h4>
+            <ul className="space-y-3">
               {footerLinks.pomoc.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:text-primary transition-colors">
+                  <a href={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
                     {t(link.labelKey)}
                   </a>
                 </li>
@@ -103,19 +112,37 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-secondary-foreground/50">
-            © {new Date().getFullYear()} Dom Blasku. {t("footer.rights")}
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
-              {t("footer.privacyPolicy")}
-            </a>
-            <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
-              {t("footer.terms")}
-            </a>
+      {/* Bottom bar */}
+      <div className="border-t border-secondary-foreground/10">
+        <div className="container-narrow mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-secondary-foreground/50">
+              © {new Date().getFullYear()} Dom Blasku. {t("footer.rights")}
+            </p>
+            
+            {/* Social links */}
+            <div className="flex items-center gap-4">
+              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+            
+            <div className="flex gap-6">
+              <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
+                {t("footer.privacyPolicy")}
+              </a>
+              <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
+                {t("footer.terms")}
+              </a>
+            </div>
           </div>
         </div>
       </div>

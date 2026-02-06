@@ -1,5 +1,6 @@
-import { Check, TrendingUp, Heart, Zap } from "lucide-react";
+import { Check, TrendingUp, Heart, Zap, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 
 export const BenefitsSection = () => {
   const { t } = useTranslation();
@@ -11,6 +12,8 @@ export const BenefitsSection = () => {
       descKey: "benefits.items.productivity.description",
       fallbackTitle: "Zwiększona produktywność",
       fallbackDesc: "Czyste biuro to efektywni pracownicy. Badania pokazują, że czystość wpływa na koncentrację i motywację.",
+      stat: "+35%",
+      statLabel: "wydajności",
     },
     {
       icon: Heart,
@@ -18,6 +21,8 @@ export const BenefitsSection = () => {
       descKey: "benefits.items.health.description",
       fallbackTitle: "Zdrowe środowisko",
       fallbackDesc: "Regularne sprzątanie eliminuje alergeny, kurz i bakterie, dbając o zdrowie Twoje i Twoich bliskich.",
+      stat: "-60%",
+      statLabel: "alergenów",
     },
     {
       icon: Zap,
@@ -25,6 +30,8 @@ export const BenefitsSection = () => {
       descKey: "benefits.items.time.description",
       fallbackTitle: "Oszczędność czasu",
       fallbackDesc: "Skup się na tym, co ważne. My zajmiemy się sprzątaniem, a Ty zyskasz cenny czas dla siebie.",
+      stat: "10h",
+      statLabel: "tygodniowo",
     },
   ];
 
@@ -38,57 +45,91 @@ export const BenefitsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/50">
+    <section className="section-padding bg-background overflow-hidden">
       <div className="container-narrow mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left column - Benefits cards */}
-          <div className="space-y-6">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">
-              {t("benefits.badge")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              {t("benefits.title")}
-            </h2>
-            
-            <div className="space-y-4 mt-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4 p-4 bg-card rounded-xl border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <benefit.icon className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">
-                      {t(benefit.titleKey, benefit.fallbackTitle)}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {t(benefit.descKey, benefit.fallbackDesc)}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            {t("benefits.badge")}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            {t("benefits.title")}
+          </h2>
+        </div>
 
-          {/* Right column - Checklist */}
-          <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              {t("benefits.included", "W cenie każdej usługi:")}
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-secondary" />
-                  </div>
-                  <span className="text-foreground">{feature}</span>
+        {/* Benefits cards - horizontal layout */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index} 
+              className="relative group"
+            >
+              <div className="h-full p-8 rounded-3xl border border-border bg-card hover:shadow-xl transition-all duration-300">
+                {/* Stat badge */}
+                <div className="absolute -top-4 right-8 bg-primary text-primary-foreground rounded-full px-4 py-1 font-bold text-lg">
+                  {benefit.stat}
                 </div>
-              ))}
+                
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <benefit.icon className="w-8 h-8 text-primary" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {t(benefit.titleKey, benefit.fallbackTitle)}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4">
+                  {t(benefit.descKey, benefit.fallbackDesc)}
+                </p>
+                
+                <div className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-primary">{benefit.stat}</span> {benefit.statLabel}
+                </div>
+              </div>
             </div>
-            
-            <div className="mt-8 p-4 bg-primary/5 rounded-xl border border-primary/20">
-              <p className="text-sm text-foreground">
-                <strong className="text-primary">{t("benefits.guarantee.title", "Gwarancja satysfakcji:")}</strong> {t("benefits.guarantee.description", "Jeśli nie będziesz zadowolony z naszych usług, wrócimy i poprawimy bez dodatkowych opłat.")}
-              </p>
+          ))}
+        </div>
+
+        {/* Features checklist */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl" />
+          
+          <div className="relative p-8 md:p-12">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-foreground mb-6">
+                  {t("benefits.included", "W cenie każdej usługi:")}
+                </h3>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="lg:w-80">
+                <div className="bg-card rounded-2xl border border-border p-6 shadow-lg">
+                  <div className="text-center mb-4">
+                    <div className="text-4xl font-bold text-primary mb-1">100%</div>
+                    <div className="text-muted-foreground">{t("benefits.guarantee.title", "Gwarancja satysfakcji")}</div>
+                  </div>
+                  <p className="text-sm text-muted-foreground text-center mb-6">
+                    {t("benefits.guarantee.description", "Jeśli nie będziesz zadowolony z naszych usług, wrócimy i poprawimy bez dodatkowych opłat.")}
+                  </p>
+                  <Button variant="cta" className="w-full" asChild>
+                    <a href="#kontakt">
+                      Zamów wycenę
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
