@@ -16,7 +16,7 @@
     "description": "Trust the cleaning experts. Comprehensive cleaning services for businesses and individuals. We guarantee perfect results and flexible schedules.",
     "cta": "Get a Free Quote",
     "ctaSecondary": "View Our Services",
-    "imageAlt": "Professional CleanPro cleaning team",
+    "imageAlt": "Professional Dom Blasku cleaning team",
     "benefits": {
       "freeQuote": "Free quote within 24h",
       "eco": "Eco-friendly cleaning products",
@@ -274,12 +274,12 @@
       "anna": {
         "name": "Anna Kowalska",
         "role": "Apartment Owner",
-        "content": "I've been using CleanPro services for a year. Fantastic quality and punctuality. I recommend it to everyone!"
+        "content": "I've been using Dom Blasku services for a year. Fantastic quality and punctuality. I recommend it to everyone!"
       },
       "marek": {
         "name": "Marek Nowak",
         "role": "Operations Director, TechCorp",
-        "content": "We work with CleanPro for our office building. Professionalism at the highest level."
+        "content": "We work with Dom Blasku for our office building. Professionalism at the highest level."
       },
       "katarzyna": {
         "name": "Katarzyna Wiśniewska",
@@ -289,7 +289,7 @@
       "piotr": {
         "name": "Piotr Zieliński",
         "role": "Business Owner",
-        "content": "After several attempts with other companies, I finally found CleanPro. Quality and price perfect."
+        "content": "After several attempts with other companies, I finally found Dom Blasku. Quality and price perfect."
       }
     }
   },
@@ -357,7 +357,7 @@
     "email": "Email",
     "address": "Address",
     "hours": "Working Hours",
-    "mapTitle": "CleanPro location on the map",
+    "mapTitle": "Dom Blasku location on the map",
     "form": {
       "name": "Full Name",
       "namePlaceholder": "John Smith",
@@ -413,7 +413,7 @@
     "services": {
       "sprzatanie-biur": {
         "title": "Office Cleaning",
-        "metaTitle": "Professional Office Cleaning Warsaw | CleanPro",
+        "metaTitle": "Professional Office Cleaning Warsaw | Dom Blasku",
         "metaDescription": "Comprehensive office cleaning services in Warsaw. Daily cleaning, disinfection, window washing. Free quote. Call now!",
         "heroDescription": "We provide professional and regular office cleaning that guarantees a clean and hygienic work environment for your employees.",
         "pricing": "from 6 PLN/m²",

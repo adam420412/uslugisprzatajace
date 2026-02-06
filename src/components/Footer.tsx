@@ -1,4 +1,4 @@
-import { Sparkles, Phone, Mail, MapPin } from "lucide-react";
+import { Home, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -38,9 +38,9 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+                <Home className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-secondary-foreground">CleanPro</span>
+              <span className="text-xl font-bold text-secondary-foreground">Dom Blasku</span>
             </Link>
             <p className="text-secondary-foreground/60 mb-6 max-w-sm">
               {t("footer.description")}
@@ -50,9 +50,9 @@ export const Footer = () => {
                 <Phone className="w-4 h-4" />
                 +48 123 456 789
               </a>
-              <a href="mailto:kontakt@cleanpro.pl" className="flex items-center gap-3 hover:text-primary transition-colors">
+              <a href="mailto:kontakt@domblasku.pl" className="flex items-center gap-3 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
-                kontakt@cleanpro.pl
+                kontakt@domblasku.pl
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
@@ -107,7 +107,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-secondary-foreground/50">
-            © {new Date().getFullYear()} CleanPro. {t("footer.rights")}
+            © {new Date().getFullYear()} Dom Blasku. {t("footer.rights")}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">

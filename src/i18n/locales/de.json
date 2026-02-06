@@ -16,7 +16,7 @@
     "description": "Vertrauen Sie den Reinigungsexperten. Umfassende Reinigungsdienste für Unternehmen und Privatpersonen. Wir garantieren perfekte Ergebnisse und flexible Termine.",
     "cta": "Kostenloses Angebot anfordern",
     "ctaSecondary": "Unsere Dienstleistungen ansehen",
-    "imageAlt": "Professionelles Reinigungsteam CleanPro",
+    "imageAlt": "Professionelles Reinigungsteam Dom Blasku",
     "benefits": {
       "freeQuote": "Kostenlose Bewertung in 24h",
       "eco": "Umweltfreundliche Reinigungsmittel",
@@ -274,12 +274,12 @@
       "anna": {
         "name": "Anna Kowalska",
         "role": "Wohnungseigentümerin",
-        "content": "Ich nutze die Dienste von CleanPro seit einem Jahr. Fantastische Qualität und Pünktlichkeit. Ich empfehle es jedem!"
+        "content": "Ich nutze die Dienste von Dom Blasku seit einem Jahr. Fantastische Qualität und Pünktlichkeit. Ich empfehle es jedem!"
       },
       "marek": {
         "name": "Marek Nowak",
         "role": "Betriebsleiter, TechCorp",
-        "content": "Wir arbeiten mit CleanPro für unser Bürogebäude zusammen. Professionalität auf höchstem Niveau."
+        "content": "Wir arbeiten mit Dom Blasku für unser Bürogebäude zusammen. Professionalität auf höchstem Niveau."
       },
       "katarzyna": {
         "name": "Katarzyna Wiśniewska",
@@ -289,7 +289,7 @@
       "piotr": {
         "name": "Piotr Zieliński",
         "role": "Unternehmer",
-        "content": "Nach mehreren Versuchen mit anderen Firmen habe ich endlich CleanPro gefunden. Qualität und Preis perfekt."
+        "content": "Nach mehreren Versuchen mit anderen Firmen habe ich endlich Dom Blasku gefunden. Qualität und Preis perfekt."
       }
     }
   },
@@ -357,7 +357,7 @@
     "email": "E-Mail",
     "address": "Adresse",
     "hours": "Öffnungszeiten",
-    "mapTitle": "CleanPro Standort auf der Karte",
+    "mapTitle": "Dom Blasku Standort auf der Karte",
     "form": {
       "name": "Name",
       "namePlaceholder": "Max Mustermann",
@@ -413,7 +413,7 @@
     "services": {
       "sprzatanie-biur": {
         "title": "Büroreinigung",
-        "metaTitle": "Professionelle Büroreinigung Warschau | CleanPro",
+        "metaTitle": "Professionelle Büroreinigung Warschau | Dom Blasku",
         "metaDescription": "Umfassende Büroreinigungsdienste in Warschau. Tägliche Reinigung, Desinfektion, Fensterreinigung. Kostenloses Angebot. Rufen Sie an!",
         "heroDescription": "Wir bieten professionelle und regelmäßige Büroreinigung, die eine saubere und hygienische Arbeitsumgebung für Ihre Mitarbeiter garantiert.",
         "pricing": "ab 6 PLN/m²",
