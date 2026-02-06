@@ -1,4 +1,4 @@
-import { Home, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Sparkles, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -7,31 +7,27 @@ export const Footer = () => {
 
   const footerLinks = {
     uslugi: [
-      { labelKey: "contact.services.office", href: "/uslugi/sprzatanie-biur" },
-      { labelKey: "contact.services.apartment", href: "/uslugi/sprzatanie-mieszkan" },
-      { labelKey: "contact.services.building", href: "/uslugi/sprzatanie-biurowcow" },
-      { labelKey: "contact.services.renovation", href: "/uslugi/sprzatanie-po-remoncie" },
-      { labelKey: "contact.services.hotel", href: "/uslugi/sprzatanie-hoteli" },
-      { labelKey: "contact.services.industrial", href: "/uslugi/sprzatanie-hal" },
+      { label: "Sprzątanie biur", href: "/uslugi/sprzatanie-biur" },
+      { label: "Sprzątanie mieszkań", href: "/uslugi/sprzatanie-mieszkan" },
+      { label: "Sprzątanie biurowców", href: "/uslugi/sprzatanie-biurowcow" },
+      { label: "Sprzątanie po remoncie", href: "/uslugi/sprzatanie-po-remoncie" },
+      { label: "Sprzątanie hoteli", href: "/uslugi/sprzatanie-hoteli" },
+      { label: "Sprzątanie hal", href: "/uslugi/sprzatanie-hal" },
     ],
     firma: [
-      { labelKey: "footer.aboutUs", href: "#" },
-      { labelKey: "nav.portfolio", href: "/#realizacje" },
-      { labelKey: "nav.testimonials", href: "/#opinie" },
-      { labelKey: "blog.badge", href: "#" },
-      { labelKey: "footer.career", href: "#" },
+      { label: "O nas", href: "#" },
+      { label: "Kariera", href: "#" },
+      { label: "Blog", href: "/blog" },
     ],
     pomoc: [
-      { labelKey: "nav.faq", href: "/#faq" },
-      { labelKey: "nav.pricing", href: "/#cennik" },
-      { labelKey: "nav.calculator", href: "/#kalkulator" },
-      { labelKey: "nav.contact", href: "/#kontakt" },
-      { labelKey: "footer.privacyPolicy", href: "#" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Cennik", href: "/cennik" },
+      { label: "Kontakt", href: "/kontakt" },
     ],
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-foreground text-background">
       {/* Main footer content */}
       <div className="container-narrow mx-auto px-4 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -39,45 +35,49 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center">
-                <Home className="w-6 h-6 text-primary-foreground" />
+                <Sparkles className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-2xl font-bold text-secondary-foreground">Dom Blasku</span>
+              <div>
+                <span className="text-xl font-bold text-background block">Usługi Sprzątające</span>
+                <span className="text-sm text-background/50">.com.pl</span>
+              </div>
             </Link>
-            <p className="text-secondary-foreground/60 mb-8 max-w-sm text-lg">
-              {t("footer.description")}
+            <p className="text-background/60 mb-8 max-w-sm">
+              Profesjonalne usługi sprzątania dla firm i osób prywatnych. 
+              Dbamy o czystość, żebyś Ty mógł skupić się na tym, co ważne.
             </p>
             
             {/* Contact info */}
             <div className="space-y-4">
-              <a href="tel:+48123456789" className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+              <a href="tel:+48123456789" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </div>
                 <span className="font-medium">+48 123 456 789</span>
               </a>
-              <a href="mailto:kontakt@domblasku.pl" className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+              <a href="mailto:kontakt@uslugisprzatajace.com.pl" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="font-medium">kontakt@domblasku.pl</span>
+                <span className="font-medium">kontakt@uslugisprzatajace.com.pl</span>
               </a>
-              <div className="flex items-center gap-3 text-secondary-foreground/60">
-                <div className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center">
+              <div className="flex items-center gap-3 text-background/60">
+                <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <span>ul. Czysta 15, 00-001 Warszawa</span>
+                <span>ul. Przykładowa 10, 00-001 Warszawa</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.services")}</h4>
+            <h4 className="text-background font-bold mb-6">Usługi</h4>
             <ul className="space-y-3">
               {footerLinks.uslugi.map((link, index) => (
                 <li key={index}>
-                  <Link to={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
-                    {t(link.labelKey)}
+                  <Link to={link.href} className="text-background/60 hover:text-primary transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -86,13 +86,13 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.company")}</h4>
+            <h4 className="text-background font-bold mb-6">Firma</h4>
             <ul className="space-y-3">
               {footerLinks.firma.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
-                    {t(link.labelKey)}
-                  </a>
+                  <Link to={link.href} className="text-background/60 hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,13 +100,13 @@ export const Footer = () => {
 
           {/* Help */}
           <div>
-            <h4 className="text-secondary-foreground font-bold mb-6">{t("footer.help", "Pomoc")}</h4>
+            <h4 className="text-background font-bold mb-6">Pomoc</h4>
             <ul className="space-y-3">
               {footerLinks.pomoc.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-secondary-foreground/60 hover:text-primary transition-colors">
-                    {t(link.labelKey)}
-                  </a>
+                  <Link to={link.href} className="text-background/60 hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -115,32 +115,32 @@ export const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-secondary-foreground/10">
+      <div className="border-t border-background/10">
         <div className="container-narrow mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-secondary-foreground/50">
-              © {new Date().getFullYear()} Dom Blasku. {t("footer.rights")}
+            <p className="text-sm text-background/50">
+              © {new Date().getFullYear()} uslugisprzatajace.com.pl. Wszelkie prawa zastrzeżone.
             </p>
             
             {/* Social links */}
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="#" className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center text-background/60 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="#" className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center text-background/60 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="#" className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center text-background/60 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
             
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
-                {t("footer.privacyPolicy")}
+              <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">
+                Polityka prywatności
               </a>
-              <a href="#" className="text-sm text-secondary-foreground/50 hover:text-primary transition-colors">
-                {t("footer.terms")}
+              <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">
+                Regulamin
               </a>
             </div>
           </div>

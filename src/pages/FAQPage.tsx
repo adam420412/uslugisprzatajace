@@ -14,12 +14,12 @@ export const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ - Najczęstsze Pytania | Dom Blasku Warszawa</title>
+        <title>FAQ - Najczęstsze Pytania | uslugisprzatajace.com.pl</title>
         <meta 
           name="description" 
-          content="Odpowiedzi na najczęściej zadawane pytania o usługi sprzątania Dom Blasku. Dowiedz się więcej o naszych usługach, cenach i gwarancjach." 
+          content="Odpowiedzi na najczęściej zadawane pytania o usługi sprzątania. Dowiedz się więcej o naszych usługach, cenach i gwarancjach." 
         />
-        <link rel="canonical" href="https://domblasku.pl/faq" />
+        <link rel="canonical" href="https://uslugisprzatajace.com.pl/faq" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -36,10 +36,10 @@ export const FAQPage = () => {
                   <HelpCircle className="w-10 h-10 text-primary" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-6">
-                  {t("faq.title")}
+                  Najczęściej zadawane pytania
                 </h1>
                 <p className="text-xl text-secondary-foreground/80">
-                  {t("faq.description")}
+                  Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych usług.
                 </p>
               </div>
             </div>
@@ -51,12 +51,14 @@ export const FAQPage = () => {
           <section className="section-padding bg-muted/50">
             <div className="container-narrow mx-auto">
               <div className="text-center max-w-2xl mx-auto">
-                <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <MessageCircle className="w-8 h-8 text-primary" />
+                </div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  {t("faq.otherQuestion")}
+                  Nie znalazłeś odpowiedzi?
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  {t("faq.contactUs")}
+                  Skontaktuj się z nami - chętnie odpowiemy na wszystkie Twoje pytania.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Home } from "lucide-react";
+import { Menu, X, Phone, Sparkles } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -12,11 +12,11 @@ export const Navigation = () => {
   const { t } = useTranslation();
 
   const navItems = [
-    { href: "/uslugi", label: t("nav.services") },
-    { href: "/cennik", label: t("nav.pricing") },
-    { href: "/opinie", label: t("nav.testimonials") },
-    { href: "/faq", label: t("nav.faq") },
-    { href: "/kontakt", label: t("nav.contact") },
+    { href: "/uslugi", label: "Usługi" },
+    { href: "/cennik", label: "Cennik" },
+    { href: "/opinie", label: "Opinie" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/kontakt", label: "Kontakt" },
   ];
 
   useEffect(() => {
@@ -42,23 +42,30 @@ export const Navigation = () => {
       <div className="container-narrow mx-auto px-4">
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <Home className="w-5 h-5 text-primary-foreground" />
+              <Sparkles className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">
-              Dom Blasku
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-foreground leading-tight">
+                Usługi Sprzątające
+              </span>
+              <span className="text-xs text-muted-foreground">.com.pl</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
                 onClick={handleNavClick}
-                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === item.href 
+                    ? 'text-primary' 
+                    : 'text-muted-foreground'
+                }`}
               >
                 {item.label}
               </Link>
@@ -66,7 +73,7 @@ export const Navigation = () => {
           </div>
 
           {/* CTA and Language Switcher */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher isScrolled={true} />
             <a
               href="tel:+48123456789"
@@ -76,7 +83,7 @@ export const Navigation = () => {
               +48 123 456 789
             </a>
             <Button variant="cta" size="default" asChild>
-              <a href="#kontakt">{t("nav.freeQuote")}</a>
+              <Link to="/kontakt">Bezpłatna wycena</Link>
             </Button>
           </div>
 
@@ -102,14 +109,25 @@ export const Navigation = () => {
                   key={item.href}
                   to={item.href}
                   onClick={handleNavClick}
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  className={`block py-2 transition-colors ${
+                    location.pathname === item.href 
+                      ? 'text-primary font-medium' 
+                      : 'text-foreground hover:text-primary'
+                  }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
+              <div className="pt-4 border-t border-border space-y-3">
+                <a
+                  href="tel:+48123456789"
+                  className="flex items-center gap-2 text-foreground"
+                >
+                  <Phone className="w-4 h-4" />
+                  +48 123 456 789
+                </a>
                 <Button variant="cta" className="w-full" asChild>
-                  <a href="#kontakt">{t("nav.freeQuote")}</a>
+                  <Link to="/kontakt">Bezpłatna wycena</Link>
                 </Button>
               </div>
             </div>

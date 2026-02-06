@@ -1,4 +1,4 @@
-import { Building2, Home, Sparkles, Warehouse, Hotel, Factory, ArrowUpRight } from "lucide-react";
+import { Building2, Home, Sparkles, Warehouse, Hotel, Factory, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,133 +9,117 @@ export const ServicesSection = () => {
   const services = [
     {
       icon: Building2,
-      titleKey: "services.office.title",
-      descKey: "services.office.description",
-      featuresKeys: ["services.office.features.daily", "services.office.features.windows", "services.office.features.disinfection"],
-      fallbackFeatures: ["Codzienne sprzątanie", "Mycie okien", "Dezynfekcja powierzchni"],
+      title: "Sprzątanie biur",
+      description: "Codzienne utrzymanie czystości, dezynfekcja, mycie okien i podłóg.",
+      features: ["Codzienne sprzątanie", "Mycie okien", "Dezynfekcja"],
       href: "/uslugi/sprzatanie-biur",
-      accent: "from-blue-500 to-cyan-500",
     },
     {
       icon: Home,
-      titleKey: "services.apartment.title",
-      descKey: "services.apartment.description",
-      featuresKeys: ["services.apartment.features.general", "services.apartment.features.renovation", "services.apartment.features.windows"],
-      fallbackFeatures: ["Sprzątanie generalne", "Sprzątanie po remoncie", "Mycie okien"],
+      title: "Sprzątanie mieszkań",
+      description: "Jednorazowe lub regularne sprzątanie domów i apartamentów.",
+      features: ["Sprzątanie generalne", "Sprzątanie po remoncie", "Mycie okien"],
       href: "/uslugi/sprzatanie-mieszkan",
-      accent: "from-emerald-500 to-teal-500",
     },
     {
       icon: Warehouse,
-      titleKey: "services.building.title",
-      descKey: "services.building.description",
-      featuresKeys: ["services.building.features.24h", "services.building.features.day", "services.building.features.common"],
-      fallbackFeatures: ["Obsługa całodobowa", "Serwis dzienny", "Sprzątanie części wspólnych"],
+      title: "Sprzątanie biurowców",
+      description: "Kompleksowa obsługa dużych obiektów biurowych i korporacyjnych.",
+      features: ["Obsługa 24/7", "Serwis dzienny", "Części wspólne"],
       href: "/uslugi/sprzatanie-biurowcow",
-      accent: "from-violet-500 to-purple-500",
     },
     {
       icon: Sparkles,
-      titleKey: "services.renovation.title",
-      descKey: "services.renovation.description",
-      featuresKeys: ["services.renovation.features.windows", "services.renovation.features.floors", "services.renovation.features.glue"],
-      fallbackFeatures: ["Mycie okien", "Czyszczenie podłóg", "Usuwanie kleju i farby"],
+      title: "Sprzątanie po remoncie",
+      description: "Dokładne usunięcie kurzu, pyłu i resztek po pracach budowlanych.",
+      features: ["Mycie okien", "Czyszczenie podłóg", "Usuwanie kleju"],
       href: "/uslugi/sprzatanie-po-remoncie",
-      accent: "from-amber-500 to-orange-500",
     },
     {
       icon: Hotel,
-      titleKey: "services.hotel.title",
-      descKey: "services.hotel.description",
-      featuresKeys: ["services.hotel.features.rooms", "services.hotel.features.bedding", "services.hotel.features.laundry"],
-      fallbackFeatures: ["Sprzątanie pokoi", "Wymiana pościeli", "Pranie i prasowanie"],
+      title: "Sprzątanie hoteli",
+      description: "Profesjonalna obsługa hoteli, pensjonatów i apartamentów na wynajem.",
+      features: ["Pokoje hotelowe", "Wymiana pościeli", "Pranie"],
       href: "/uslugi/sprzatanie-hoteli",
-      accent: "from-rose-500 to-pink-500",
     },
     {
       icon: Factory,
-      titleKey: "services.industrial.title",
-      descKey: "services.industrial.description",
-      featuresKeys: ["services.industrial.features.floors", "services.industrial.features.machines", "services.industrial.features.waste"],
-      fallbackFeatures: ["Czyszczenie posadzek", "Mycie maszyn", "Utylizacja odpadów"],
+      title: "Sprzątanie hal",
+      description: "Specjalistyczne czyszczenie hal produkcyjnych i magazynów.",
+      features: ["Posadzki przemysłowe", "Maszyny", "Utylizacja"],
       href: "/uslugi/sprzatanie-hal",
-      accent: "from-slate-500 to-zinc-600",
     },
   ];
 
   return (
-    <section id="uslugi" className="section-padding bg-muted/30">
+    <section id="uslugi" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         {/* Section header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-              {t("services.badge")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t("services.title")}
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              {t("services.description")}
-            </p>
-          </div>
-          <Button variant="outline" size="lg" asChild>
-            <a href="#kontakt">
-              Wszystkie usługi
-              <ArrowUpRight className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Nasze usługi
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Kompleksowe usługi sprzątające
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Oferujemy szeroki zakres usług dla firm i osób prywatnych. 
+            Każdą usługę dostosowujemy do Twoich potrzeb.
+          </p>
         </div>
 
-        {/* Services - horizontal cards */}
-        <div className="space-y-4">
+        {/* Services grid - card layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.href}
-              className="group block"
+              className="group"
             >
-              <article className="relative overflow-hidden rounded-2xl border border-border bg-card hover:shadow-xl transition-all duration-300">
-                <div className="flex flex-col md:flex-row">
-                  {/* Icon column */}
-                  <div className={`md:w-48 p-6 md:p-8 flex items-center justify-center bg-gradient-to-br ${service.accent}`}>
-                    <service.icon className="w-12 h-12 md:w-16 md:h-16 text-white" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1 p-6 md:p-8">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {t(service.titleKey)}
-                        </h3>
-                        <p className="text-muted-foreground mb-4">
-                          {t(service.descKey)}
-                        </p>
-                        
-                        {/* Features tags */}
-                        <div className="flex flex-wrap gap-2">
-                          {service.fallbackFeatures.map((feature, fIndex) => (
-                            <span
-                              key={fIndex}
-                              className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-muted text-muted-foreground"
-                            >
-                              {t(service.featuresKeys[fIndex], feature)}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Arrow indicator */}
-                      <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-muted group-hover:bg-primary transition-colors">
-                        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
-                      </div>
-                    </div>
-                  </div>
+              <article className="h-full p-8 rounded-3xl bg-card border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                {/* Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {service.description}
+                </p>
+                
+                {/* Features tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {service.features.map((feature, fIndex) => (
+                    <span
+                      key={fIndex}
+                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Link indicator */}
+                <div className="flex items-center gap-2 text-primary font-medium">
+                  <span>Dowiedz się więcej</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </article>
             </Link>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/uslugi">
+              Zobacz wszystkie usługi
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
