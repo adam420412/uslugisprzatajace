@@ -36,7 +36,7 @@ export const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-card/95 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          : "bg-card/90 backdrop-blur-sm"
       }`}
     >
       <div className="container-narrow mx-auto px-4">
@@ -46,7 +46,7 @@ export const Navigation = () => {
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
               <Home className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className={`text-xl font-bold ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`}>
+            <span className="text-xl font-bold text-foreground">
               Dom Blasku
             </span>
           </Link>
@@ -58,9 +58,7 @@ export const Navigation = () => {
                 key={item.href}
                 to={item.href}
                 onClick={handleNavClick}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled ? "text-muted-foreground" : "text-secondary-foreground/80"
-                }`}
+                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
               >
                 {item.label}
               </Link>
@@ -69,12 +67,10 @@ export const Navigation = () => {
 
           {/* CTA and Language Switcher */}
           <div className="hidden md:flex items-center gap-3">
-            <LanguageSwitcher isScrolled={isScrolled} />
+            <LanguageSwitcher isScrolled={true} />
             <a
               href="tel:+48123456789"
-              className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary ${
-                isScrolled ? "text-foreground" : "text-secondary-foreground"
-              }`}
+              className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary text-foreground"
             >
               <Phone className="w-4 h-4" />
               +48 123 456 789
@@ -86,10 +82,10 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <LanguageSwitcher isScrolled={isScrolled} />
+            <LanguageSwitcher isScrolled={true} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`}
+              className="p-2 text-foreground"
               aria-label="Menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
