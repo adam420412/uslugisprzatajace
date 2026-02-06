@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 
@@ -22,8 +22,8 @@ export const ContactSection = () => {
     {
       icon: Mail,
       labelKey: "contact.email",
-      value: "kontakt@cleanpro.pl",
-      href: "mailto:kontakt@cleanpro.pl",
+      value: "kontakt@domblasku.pl",
+      href: "mailto:kontakt@domblasku.pl",
     },
     {
       icon: MapPin,
@@ -54,7 +54,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="kontakt" className="section-padding bg-muted/50">
+    <section id="kontakt" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -69,62 +69,19 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-xl font-bold text-foreground mb-6">
-              {t("contact.contactData", "Dane kontaktowe")}
-            </h3>
-            
-            <div className="space-y-4">
-              {contactInfo.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="flex items-start gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary transition-colors group"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-                    <item.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">
-                      {t(item.labelKey)}
-                    </div>
-                    <div className="font-medium text-foreground">
-                      {item.value}
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Google Maps */}
-            <div className="h-64 rounded-xl overflow-hidden border border-border">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.3913185268424!2d21.00732731580091!3d52.23194506437542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={t("contact.mapTitle", "Lokalizacja na mapie")}
-              />
-            </div>
-          </div>
-
-          {/* Contact form */}
-          <div className="lg:col-span-3">
-            <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left - Contact form */}
+          <div className="order-2 lg:order-1">
+            <div className="bg-card rounded-3xl border border-border p-8 shadow-lg">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-primary" />
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {t("contact.form.success")}
                   </h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground mb-8">
                     {t("contact.form.successDescription")}
                   </p>
                   <Button variant="outline" onClick={() => setIsSubmitted(false)}>
@@ -142,7 +99,7 @@ export const ContactSection = () => {
                         type="text"
                         placeholder={t("contact.form.namePlaceholder")}
                         required
-                        className="h-12"
+                        className="h-12 rounded-xl"
                       />
                     </div>
                     <div>
@@ -153,7 +110,7 @@ export const ContactSection = () => {
                         type="tel"
                         placeholder={t("contact.form.phonePlaceholder")}
                         required
-                        className="h-12"
+                        className="h-12 rounded-xl"
                       />
                     </div>
                   </div>
@@ -165,7 +122,7 @@ export const ContactSection = () => {
                     <Input
                       type="email"
                       placeholder={t("contact.form.emailPlaceholder")}
-                      className="h-12"
+                      className="h-12 rounded-xl"
                     />
                   </div>
 
@@ -173,7 +130,7 @@ export const ContactSection = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       {t("contact.form.service")}
                     </label>
-                    <select className="w-full h-12 rounded-lg border border-input bg-background px-3 text-foreground">
+                    <select className="w-full h-12 rounded-xl border border-input bg-background px-3 text-foreground">
                       <option value="">{t("contact.form.servicePlaceholder")}</option>
                       <option value="biuro">{t("contact.services.office")}</option>
                       <option value="mieszkanie">{t("contact.services.apartment")}</option>
@@ -192,11 +149,12 @@ export const ContactSection = () => {
                     <Textarea
                       placeholder={t("contact.form.messagePlaceholder")}
                       rows={4}
+                      className="rounded-xl"
                     />
                   </div>
 
-                  <div className="flex items-start gap-2">
-                    <input type="checkbox" required className="mt-1" id="consent" />
+                  <div className="flex items-start gap-3">
+                    <input type="checkbox" required className="mt-1 w-5 h-5 rounded border-border" id="consent" />
                     <label htmlFor="consent" className="text-sm text-muted-foreground">
                       {t("contact.form.consent")} *
                     </label>
@@ -220,6 +178,53 @@ export const ContactSection = () => {
                   </Button>
                 </form>
               )}
+            </div>
+          </div>
+
+          {/* Right - Contact info */}
+          <div className="order-1 lg:order-2">
+            <div className="sticky top-24 space-y-6">
+              <h3 className="text-2xl font-bold text-foreground mb-8">
+                {t("contact.contactData", "Dane kontaktowe")}
+              </h3>
+              
+              {/* Contact cards */}
+              <div className="space-y-4">
+                {contactInfo.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.href}
+                    className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all group"
+                  >
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                      <item.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm text-muted-foreground">
+                        {t(item.labelKey)}
+                      </div>
+                      <div className="font-semibold text-foreground">
+                        {item.value}
+                      </div>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </a>
+                ))}
+              </div>
+
+              {/* Google Maps */}
+              <div className="h-64 rounded-2xl overflow-hidden border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.3913185268424!2d21.00732731580091!3d52.23194506437542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={t("contact.mapTitle", "Lokalizacja na mapie")}
+                />
+              </div>
             </div>
           </div>
         </div>

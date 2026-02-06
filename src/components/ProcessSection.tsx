@@ -1,4 +1,4 @@
-import { Phone, FileText, Calendar, Sparkles, CheckCircle } from "lucide-react";
+import { Phone, FileText, Calendar, Sparkles, CheckCircle, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const ProcessSection = () => {
@@ -48,7 +48,7 @@ export const ProcessSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/50">
+    <section className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -63,37 +63,40 @@ export const ProcessSection = () => {
           </p>
         </div>
 
-        {/* Process steps */}
-        <div className="relative">
-          {/* Connection line - desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 relative">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Step card */}
-                <div className="bg-card rounded-xl border border-border p-6 text-center relative z-10 h-full">
-                  {/* Number badge */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
+        {/* Process steps - vertical timeline */}
+        <div className="max-w-3xl mx-auto">
+          {steps.map((step, index) => (
+            <div key={index} className="relative">
+              {/* Connector line */}
+              {index < steps.length - 1 && (
+                <div className="absolute left-8 top-20 bottom-0 w-0.5 bg-border">
+                  <ArrowDown className="absolute -bottom-3 -left-[9px] w-5 h-5 text-border" />
+                </div>
+              )}
+              
+              <div className="flex gap-6 pb-12 last:pb-0">
+                {/* Step number circle */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 border-4 border-background flex items-center justify-center">
+                    <step.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
                     {step.number}
                   </div>
-                  
-                  {/* Icon */}
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 mt-2">
-                    <step.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 pt-3">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {t(step.titleKey, step.fallbackTitle)}
                   </h3>
-                  
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground">
                     {t(step.descKey, step.fallbackDesc)}
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

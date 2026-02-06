@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export const FAQSection = () => {
   const { t } = useTranslation();
@@ -60,55 +61,91 @@ export const FAQSection = () => {
     },
   ];
 
+  // Split faqs into two columns
+  const leftFaqs = faqs.slice(0, 4);
+  const rightFaqs = faqs.slice(4);
+
   return (
-    <section id="faq" className="section-padding bg-muted/50">
+    <section id="faq" className="section-padding bg-muted/30">
       <div className="container-narrow mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left column - Header */}
-          <div>
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-              {t("faq.badge")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t("faq.title")}
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              {t("faq.description")}
-            </p>
-            <div className="p-6 bg-card rounded-xl border border-border">
-              <h3 className="font-semibold text-foreground mb-2">
+        {/* Section header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            {t("faq.badge")}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            {t("faq.title")}
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            {t("faq.description")}
+          </p>
+        </div>
+
+        {/* Two column FAQ layout */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <Accordion type="single" collapsible className="space-y-4">
+            {leftFaqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`left-${index}`}
+                className="bg-card rounded-2xl border border-border px-6 data-[state=open]:shadow-lg transition-all"
+              >
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
+                  {t(faq.questionKey, faq.fallbackQ)}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-5">
+                  {t(faq.answerKey, faq.fallbackA)}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {rightFaqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`right-${index}`}
+                className="bg-card rounded-2xl border border-border px-6 data-[state=open]:shadow-lg transition-all"
+              >
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
+                  {t(faq.questionKey, faq.fallbackQ)}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-5">
+                  {t(faq.answerKey, faq.fallbackA)}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="bg-card rounded-3xl border border-border p-8 md:p-12">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
                 {t("faq.otherQuestion", "Masz inne pytanie?")}
               </h3>
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-muted-foreground">
                 {t("faq.contactUs", "Skontaktuj się z nami telefonicznie lub mailowo. Chętnie odpowiemy na wszystkie Twoje pytania.")}
               </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+48123456789"
-                className="text-primary font-semibold hover:underline"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
               >
+                <Phone className="w-5 h-5" />
                 +48 123 456 789
               </a>
+              <a
+                href="mailto:kontakt@domblasku.pl"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl font-semibold hover:bg-muted/80 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                Email
+              </a>
             </div>
-          </div>
-
-          {/* Right column - FAQ Accordion */}
-          <div>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-card rounded-xl border border-border px-6 data-[state=open]:shadow-md transition-shadow"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-4">
-                    {t(faq.questionKey, faq.fallbackQ)}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
-                    {t(faq.answerKey, faq.fallbackA)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </div>
