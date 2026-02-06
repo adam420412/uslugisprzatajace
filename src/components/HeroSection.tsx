@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import heroImage from "@/assets/hero-cleaning-team.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
@@ -14,14 +14,19 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Video background */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt={t("hero.imageAlt", "Profesjonalny zespół sprzątający")} 
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
           className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-secondary/90" />
+          poster=""
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-secondary/80" />
       </div>
       
       {/* Decorative elements */}
