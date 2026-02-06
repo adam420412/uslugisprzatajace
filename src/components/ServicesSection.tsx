@@ -1,4 +1,4 @@
-import { Building2, Home, Sparkles, Warehouse, Hotel, Factory, ArrowRight } from "lucide-react";
+import { Building2, Home, Sparkles, Warehouse, Hotel, Factory, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -10,114 +10,114 @@ export const ServicesSection = () => {
     {
       icon: Building2,
       title: "Sprzątanie biur",
-      description: "Codzienne utrzymanie czystości, dezynfekcja, mycie okien i podłóg.",
-      features: ["Codzienne sprzątanie", "Mycie okien", "Dezynfekcja"],
+      shortDesc: "Codzienne utrzymanie czystości",
       href: "/uslugi/sprzatanie-biur",
+      accent: "from-primary to-accent",
     },
     {
       icon: Home,
       title: "Sprzątanie mieszkań",
-      description: "Jednorazowe lub regularne sprzątanie domów i apartamentów.",
-      features: ["Sprzątanie generalne", "Sprzątanie po remoncie", "Mycie okien"],
+      shortDesc: "Domy i apartamenty",
       href: "/uslugi/sprzatanie-mieszkan",
+      accent: "from-accent to-primary",
     },
     {
       icon: Warehouse,
       title: "Sprzątanie biurowców",
-      description: "Kompleksowa obsługa dużych obiektów biurowych i korporacyjnych.",
-      features: ["Obsługa 24/7", "Serwis dzienny", "Części wspólne"],
+      shortDesc: "Duże obiekty komercyjne",
       href: "/uslugi/sprzatanie-biurowcow",
+      accent: "from-primary to-accent",
     },
     {
       icon: Sparkles,
       title: "Sprzątanie po remoncie",
-      description: "Dokładne usunięcie kurzu, pyłu i resztek po pracach budowlanych.",
-      features: ["Mycie okien", "Czyszczenie podłóg", "Usuwanie kleju"],
+      shortDesc: "Usunięcie pyłu i resztek",
       href: "/uslugi/sprzatanie-po-remoncie",
+      accent: "from-accent to-primary",
     },
     {
       icon: Hotel,
       title: "Sprzątanie hoteli",
-      description: "Profesjonalna obsługa hoteli, pensjonatów i apartamentów na wynajem.",
-      features: ["Pokoje hotelowe", "Wymiana pościeli", "Pranie"],
+      shortDesc: "Hotele i apartamenty",
       href: "/uslugi/sprzatanie-hoteli",
+      accent: "from-primary to-accent",
     },
     {
       icon: Factory,
       title: "Sprzątanie hal",
-      description: "Specjalistyczne czyszczenie hal produkcyjnych i magazynów.",
-      features: ["Posadzki przemysłowe", "Maszyny", "Utylizacja"],
+      shortDesc: "Przemysł i magazyny",
       href: "/uslugi/sprzatanie-hal",
+      accent: "from-accent to-primary",
     },
   ];
 
   return (
-    <section id="uslugi" className="section-padding bg-background">
+    <section id="uslugi" className="section-padding bg-muted/50 relative">
       <div className="container-narrow mx-auto">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            Nasze usługi
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Kompleksowe usługi sprzątające
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Oferujemy szeroki zakres usług dla firm i osób prywatnych. 
-            Każdą usługę dostosowujemy do Twoich potrzeb.
+        {/* Header with asymmetric layout */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+          <div className="max-w-xl">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+              Nasze usługi
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Czego potrzebujesz?
+            </h2>
+          </div>
+          <p className="text-lg text-muted-foreground max-w-md">
+            Wybierz usługę, która odpowiada Twoim potrzebom. Każdą dostosowujemy indywidualnie.
           </p>
         </div>
 
-        {/* Services grid - card layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Services - Bento grid style */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.href}
-              className="group"
+              className={`group relative overflow-hidden rounded-2xl bg-card border border-border p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${
+                index === 0 || index === 3 ? 'md:col-span-1' : ''
+              }`}
             >
-              <article className="h-full p-8 rounded-3xl bg-card border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300">
-                {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+              {/* Gradient background on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary-foreground/20 flex items-center justify-center mb-4 transition-colors">
+                  <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 
-                {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary-foreground mb-1 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
+                <p className="text-sm text-muted-foreground group-hover:text-primary-foreground/80 mb-4 transition-colors">
+                  {service.shortDesc}
                 </p>
                 
-                {/* Features tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {service.features.map((feature, fIndex) => (
-                    <span
-                      key={fIndex}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+                <div className="flex items-center gap-1 text-primary group-hover:text-primary-foreground text-sm font-medium transition-colors">
+                  <span>Zobacz</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
-
-                {/* Link indicator */}
-                <div className="flex items-center gap-2 text-primary font-medium">
-                  <span>Dowiedz się więcej</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </article>
+              </div>
             </Link>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/uslugi">
-              Zobacz wszystkie usługi
-              <ArrowRight className="w-4 h-4 ml-2" />
+        {/* Bottom banner */}
+        <div className="mt-12 bg-card rounded-3xl border border-border p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+              Nie wiesz, czego potrzebujesz?
+            </h3>
+            <p className="text-muted-foreground">
+              Zadzwoń - doradzimy i dobierzemy usługę do Twoich potrzeb.
+            </p>
+          </div>
+          <Button variant="cta" size="lg" asChild>
+            <Link to="/kontakt">
+              Bezpłatna konsultacja
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </Button>
         </div>
