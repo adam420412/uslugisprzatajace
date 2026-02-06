@@ -1,4 +1,4 @@
-import { Phone, FileText, Calendar, Sparkles, CheckCircle, ArrowDown } from "lucide-react";
+import { Phone, FileText, Calendar, Sparkles, CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const ProcessSection = () => {
@@ -7,7 +7,7 @@ export const ProcessSection = () => {
   const steps = [
     {
       icon: Phone,
-      number: "01",
+      number: "1",
       titleKey: "process.steps.contact.title",
       descKey: "process.steps.contact.description",
       fallbackTitle: "Kontakt",
@@ -15,7 +15,7 @@ export const ProcessSection = () => {
     },
     {
       icon: FileText,
-      number: "02",
+      number: "2",
       titleKey: "process.steps.quote.title",
       descKey: "process.steps.quote.description",
       fallbackTitle: "Bezpłatna wycena",
@@ -23,7 +23,7 @@ export const ProcessSection = () => {
     },
     {
       icon: Calendar,
-      number: "03",
+      number: "3",
       titleKey: "process.steps.schedule.title",
       descKey: "process.steps.schedule.description",
       fallbackTitle: "Ustalenie terminu",
@@ -31,7 +31,7 @@ export const ProcessSection = () => {
     },
     {
       icon: Sparkles,
-      number: "04",
+      number: "4",
       titleKey: "process.steps.execution.title",
       descKey: "process.steps.execution.description",
       fallbackTitle: "Realizacja",
@@ -39,7 +39,7 @@ export const ProcessSection = () => {
     },
     {
       icon: CheckCircle,
-      number: "05",
+      number: "5",
       titleKey: "process.steps.completion.title",
       descKey: "process.steps.completion.description",
       fallbackTitle: "Odbiór i rozliczenie",
@@ -48,52 +48,53 @@ export const ProcessSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow mx-auto">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold mb-6">
             {t("process.badge")}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
             {t("process.title")}
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-secondary-foreground/70 text-lg">
             {t("process.description")}
           </p>
         </div>
 
-        {/* Process steps - vertical timeline */}
-        <div className="max-w-3xl mx-auto">
+        {/* Process steps - horizontal cards */}
+        <div className="grid md:grid-cols-5 gap-4">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Connector line */}
+            <div 
+              key={index} 
+              className="relative group"
+            >
+              {/* Connector arrow */}
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-20 bottom-0 w-0.5 bg-border">
-                  <ArrowDown className="absolute -bottom-3 -left-[9px] w-5 h-5 text-border" />
+                <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
+                  <div className="w-4 h-4 border-t-2 border-r-2 border-primary/40 rotate-45" />
                 </div>
               )}
               
-              <div className="flex gap-6 pb-12 last:pb-0">
-                {/* Step number circle */}
-                <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 border-4 border-background flex items-center justify-center">
-                    <step.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
-                    {step.number}
-                  </div>
+              <div className="bg-card rounded-2xl p-6 h-full text-center hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                {/* Step number */}
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground text-lg font-bold flex items-center justify-center mx-auto mb-4">
+                  {step.number}
+                </div>
+                
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="w-7 h-7 text-primary" />
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1 pt-3">
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {t(step.titleKey, step.fallbackTitle)}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {t(step.descKey, step.fallbackDesc)}
-                  </p>
-                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {t(step.titleKey, step.fallbackTitle)}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {t(step.descKey, step.fallbackDesc)}
+                </p>
               </div>
             </div>
           ))}
