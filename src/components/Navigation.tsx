@@ -12,13 +12,11 @@ export const Navigation = () => {
   const { t } = useTranslation();
 
   const navItems = [
-    { href: "/#uslugi", label: t("nav.services") },
-    { href: "/#cennik", label: t("nav.pricing") },
-    { href: "/#kalkulator", label: t("nav.calculator") },
-    { href: "/#realizacje", label: t("nav.portfolio") },
-    { href: "/#opinie", label: t("nav.testimonials") },
-    { href: "/#faq", label: t("nav.faq") },
-    { href: "/#kontakt", label: t("nav.contact") },
+    { href: "/uslugi", label: t("nav.services") },
+    { href: "/cennik", label: t("nav.pricing") },
+    { href: "/opinie", label: t("nav.testimonials") },
+    { href: "/faq", label: t("nav.faq") },
+    { href: "/kontakt", label: t("nav.contact") },
   ];
 
   useEffect(() => {
@@ -29,11 +27,8 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = () => {
     setIsOpen(false);
-    if (href.startsWith("/#") && location.pathname !== "/") {
-      window.location.href = href;
-    }
   };
 
   return (
@@ -59,16 +54,16 @@ export const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                onClick={() => handleNavClick(item.href)}
+                to={item.href}
+                onClick={handleNavClick}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   isScrolled ? "text-muted-foreground" : "text-secondary-foreground/80"
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -107,14 +102,14 @@ export const Navigation = () => {
           <div className="lg:hidden absolute top-16 left-0 right-0 bg-card border-b border-border shadow-lg">
             <div className="container py-4 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  onClick={() => handleNavClick(item.href)}
+                  to={item.href}
+                  onClick={handleNavClick}
                   className="block py-2 text-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 border-t border-border">
                 <Button variant="cta" className="w-full" asChild>
