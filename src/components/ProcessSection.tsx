@@ -1,4 +1,4 @@
-import { Phone, FileText, Calendar, Sparkles, CheckCircle } from "lucide-react";
+import { Phone, FileText, Users, Sparkles, ThumbsUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const ProcessSection = () => {
@@ -6,98 +6,88 @@ export const ProcessSection = () => {
 
   const steps = [
     {
+      number: "01",
       icon: Phone,
-      number: "1",
-      titleKey: "process.steps.contact.title",
-      descKey: "process.steps.contact.description",
-      fallbackTitle: "Kontakt",
-      fallbackDesc: "Zadzwoń lub wypełnij formularz. Odpowiemy w ciągu 24 godzin.",
+      title: "Kontakt",
+      description: "Zadzwoń lub wypełnij formularz. Odpowiemy w ciągu 24 godzin.",
     },
     {
+      number: "02",
       icon: FileText,
-      number: "2",
-      titleKey: "process.steps.quote.title",
-      descKey: "process.steps.quote.description",
-      fallbackTitle: "Bezpłatna wycena",
-      fallbackDesc: "Przyjedziemy i ocenimy zakres prac. Przedstawimy szczegółową ofertę.",
+      title: "Wycena",
+      description: "Przyjedziemy na miejsce lub wycenimy zdalnie. Bezpłatnie!",
     },
     {
-      icon: Calendar,
-      number: "3",
-      titleKey: "process.steps.schedule.title",
-      descKey: "process.steps.schedule.description",
-      fallbackTitle: "Ustalenie terminu",
-      fallbackDesc: "Wspólnie wybierzemy dogodny termin realizacji usługi.",
+      number: "03",
+      icon: Users,
+      title: "Dobór zespołu",
+      description: "Przydzielimy Ci dedykowany zespół dopasowany do Twoich potrzeb.",
     },
     {
+      number: "04",
       icon: Sparkles,
-      number: "4",
-      titleKey: "process.steps.execution.title",
-      descKey: "process.steps.execution.description",
-      fallbackTitle: "Realizacja",
-      fallbackDesc: "Nasz zespół wykonuje usługę zgodnie z ustaleniami.",
+      title: "Realizacja",
+      description: "Sprzątamy zgodnie z ustalonym harmonogramem i standardami.",
     },
     {
-      icon: CheckCircle,
-      number: "5",
-      titleKey: "process.steps.completion.title",
-      descKey: "process.steps.completion.description",
-      fallbackTitle: "Odbiór i rozliczenie",
-      fallbackDesc: "Sprawdzasz efekty, a my wystawiamy fakturę. Gotowe!",
+      number: "05",
+      icon: ThumbsUp,
+      title: "Kontrola jakości",
+      description: "Sprawdzamy efekty i zbieramy feedback. Twoja satysfakcja to nasz cel.",
     },
   ];
 
   return (
-    <section className="section-padding bg-secondary">
-      <div className="container-narrow mx-auto">
+    <section className="section-padding bg-foreground text-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container-narrow mx-auto relative z-10">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold mb-6">
-            {t("process.badge")}
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Jak działamy
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
-            {t("process.title")}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6">
+            5 kroków do czystości
           </h2>
-          <p className="text-secondary-foreground/70 text-lg">
-            {t("process.description")}
+          <p className="text-lg text-background/70">
+            Prosty proces współpracy - od pierwszego kontaktu do lśniącej przestrzeni.
           </p>
         </div>
 
-        {/* Process steps - horizontal cards */}
-        <div className="grid md:grid-cols-5 gap-4">
-          {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className="relative group"
-            >
-              {/* Connector arrow */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
-                  <div className="w-4 h-4 border-t-2 border-r-2 border-primary/40 rotate-45" />
-                </div>
-              )}
-              
-              <div className="bg-card rounded-2xl p-6 h-full text-center hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
-                {/* Step number */}
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground text-lg font-bold flex items-center justify-center mx-auto mb-4">
-                  {step.number}
-                </div>
-                
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="w-7 h-7 text-primary" />
+        {/* Steps - timeline style */}
+        <div className="relative">
+          {/* Connecting line */}
+          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-background/20" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="relative text-center group">
+                {/* Step number circle */}
+                <div className="relative mx-auto mb-6">
+                  <div className="w-20 h-20 rounded-full bg-background/10 border-2 border-background/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <step.icon className="w-8 h-8 text-background group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  {/* Number badge */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold text-primary-foreground">
+                    {step.number}
+                  </div>
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {t(step.titleKey, step.fallbackTitle)}
+                <h3 className="text-lg font-bold text-background mb-2">
+                  {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  {t(step.descKey, step.fallbackDesc)}
+                <p className="text-sm text-background/60">
+                  {step.description}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

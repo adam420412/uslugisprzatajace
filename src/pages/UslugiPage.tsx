@@ -13,39 +13,51 @@ import {
   Hotel, 
   Factory,
   ArrowRight,
-  CheckCircle2
+  Check
 } from "lucide-react";
 
 const services = [
   { 
     slug: "sprzatanie-biur", 
+    title: "Sprzątanie biur",
+    description: "Codzienne utrzymanie czystości w biurach i przestrzeniach firmowych.",
+    features: ["Codzienne sprzątanie", "Mycie okien", "Dezynfekcja powierzchni"],
     icon: Building2,
-    color: "from-blue-500 to-blue-600"
   },
   { 
     slug: "sprzatanie-mieszkan", 
+    title: "Sprzątanie mieszkań",
+    description: "Jednorazowe lub regularne sprzątanie domów i apartamentów.",
+    features: ["Sprzątanie generalne", "Sprzątanie po remoncie", "Mycie okien"],
     icon: Home,
-    color: "from-emerald-500 to-emerald-600"
   },
   { 
     slug: "sprzatanie-biurowcow", 
+    title: "Sprzątanie biurowców",
+    description: "Kompleksowa obsługa dużych obiektów biurowych.",
+    features: ["Obsługa 24/7", "Serwis dzienny", "Części wspólne"],
     icon: Warehouse,
-    color: "from-purple-500 to-purple-600"
   },
   { 
     slug: "sprzatanie-po-remoncie", 
+    title: "Sprzątanie po remoncie",
+    description: "Dokładne usunięcie kurzu i resztek po pracach budowlanych.",
+    features: ["Mycie okien", "Czyszczenie podłóg", "Usuwanie kleju i farby"],
     icon: Sparkles,
-    color: "from-amber-500 to-amber-600"
   },
   { 
     slug: "sprzatanie-hoteli", 
+    title: "Sprzątanie hoteli",
+    description: "Profesjonalna obsługa hoteli i apartamentów na wynajem.",
+    features: ["Pokoje hotelowe", "Wymiana pościeli", "Pranie i prasowanie"],
     icon: Hotel,
-    color: "from-rose-500 to-rose-600"
   },
   { 
     slug: "sprzatanie-hal", 
+    title: "Sprzątanie hal",
+    description: "Specjalistyczne czyszczenie hal produkcyjnych i magazynów.",
+    features: ["Posadzki przemysłowe", "Mycie maszyn", "Utylizacja odpadów"],
     icon: Factory,
-    color: "from-slate-500 to-slate-600"
   },
 ];
 
@@ -55,12 +67,12 @@ export const UslugiPage = () => {
   return (
     <>
       <Helmet>
-        <title>Usługi Sprzątania | Dom Blasku Warszawa</title>
+        <title>Usługi Sprzątania | uslugisprzatajace.com.pl</title>
         <meta 
           name="description" 
-          content="Profesjonalne usługi sprzątania biur, mieszkań, biurowców i hoteli w Warszawie. Sprawdź naszą ofertę i zamów bezpłatną wycenę." 
+          content="Profesjonalne usługi sprzątania biur, mieszkań, biurowców i hoteli. Sprawdź naszą ofertę i zamów bezpłatną wycenę." 
         />
-        <link rel="canonical" href="https://domblasku.pl/uslugi" />
+        <link rel="canonical" href="https://uslugisprzatajace.com.pl/uslugi" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -75,13 +87,13 @@ export const UslugiPage = () => {
             <div className="container-narrow mx-auto px-4 relative z-10">
               <div className="text-center max-w-3xl mx-auto">
                 <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold mb-6">
-                  {t("services.badge")}
+                  Nasze usługi
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-6">
-                  {t("services.title")}
+                  Kompleksowe usługi sprzątające
                 </h1>
                 <p className="text-xl text-secondary-foreground/80">
-                  {t("services.description")}
+                  Oferujemy szeroki zakres profesjonalnych usług sprzątania dla firm i osób prywatnych.
                 </p>
               </div>
             </div>
@@ -93,51 +105,36 @@ export const UslugiPage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((service) => {
                   const ServiceIcon = service.icon;
-                  const serviceKey = `services.${service.slug.replace("sprzatanie-", "").replace("-", "")}` as const;
-                  
-                  // Map slugs to translation keys
-                  const keyMap: Record<string, string> = {
-                    "sprzatanie-biur": "office",
-                    "sprzatanie-mieszkan": "apartment",
-                    "sprzatanie-biurowcow": "building",
-                    "sprzatanie-po-remoncie": "renovation",
-                    "sprzatanie-hoteli": "hotel",
-                    "sprzatanie-hal": "industrial",
-                  };
-                  
-                  const translationKey = keyMap[service.slug];
                   
                   return (
                     <div 
                       key={service.slug}
-                      className="group card-elevated p-8 hover:shadow-xl transition-all duration-300"
+                      className="group p-8 rounded-3xl bg-card border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300"
                     >
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                        <ServiceIcon className="w-8 h-8 text-white" />
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        <ServiceIcon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
                       </div>
                       
-                      <h3 className="text-xl font-bold text-foreground mb-3">
-                        {t(`services.${translationKey}.title`)}
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {service.title}
                       </h3>
                       
                       <p className="text-muted-foreground mb-6">
-                        {t(`services.${translationKey}.description`)}
+                        {service.description}
                       </p>
                       
                       <div className="space-y-2 mb-6">
-                        <div className="flex items-center gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-primary" />
-                          <span>{t(`services.${translationKey}.features.${Object.keys(t(`services.${translationKey}.features`, { returnObjects: true }) as object)[0]}`)}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-primary" />
-                          <span>{t(`services.${translationKey}.features.${Object.keys(t(`services.${translationKey}.features`, { returnObjects: true }) as object)[1]}`)}</span>
-                        </div>
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm text-foreground">
+                            <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
                       </div>
                       
                       <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
                         <Link to={`/uslugi/${service.slug}`}>
-                          {t("services.viewDetails")}
+                          Dowiedz się więcej
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                       </Button>

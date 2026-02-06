@@ -11,26 +11,26 @@ export const KontaktPage = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: t("contact.phone"),
+      title: "Telefon",
       value: "+48 123 456 789",
       href: "tel:+48123456789"
     },
     {
       icon: Mail,
-      title: t("contact.email"),
-      value: "kontakt@domblasku.pl",
-      href: "mailto:kontakt@domblasku.pl"
+      title: "Email",
+      value: "kontakt@uslugisprzatajace.com.pl",
+      href: "mailto:kontakt@uslugisprzatajace.com.pl"
     },
     {
       icon: MapPin,
-      title: t("contact.address"),
-      value: "ul. Czysta 15, 00-001 Warszawa",
+      title: "Adres",
+      value: "ul. Przykładowa 10, 00-001 Warszawa",
       href: null
     },
     {
       icon: Clock,
-      title: t("contact.hours"),
-      value: "Pon-Pt: 8:00-18:00",
+      title: "Godziny pracy",
+      value: "Pon-Pt: 7:00-20:00, Sob: 8:00-16:00",
       href: null
     },
   ];
@@ -38,12 +38,12 @@ export const KontaktPage = () => {
   return (
     <>
       <Helmet>
-        <title>Kontakt | Dom Blasku Warszawa</title>
+        <title>Kontakt | uslugisprzatajace.com.pl</title>
         <meta 
           name="description" 
-          content="Skontaktuj się z Dom Blasku - profesjonalne usługi sprzątania w Warszawie. Zadzwoń, napisz lub wypełnij formularz. Odpowiemy w 24h!" 
+          content="Skontaktuj się z nami - profesjonalne usługi sprzątania. Zadzwoń, napisz lub wypełnij formularz. Odpowiemy w 24h!" 
         />
-        <link rel="canonical" href="https://domblasku.pl/kontakt" />
+        <link rel="canonical" href="https://uslugisprzatajace.com.pl/kontakt" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -58,13 +58,13 @@ export const KontaktPage = () => {
             <div className="container-narrow mx-auto px-4 relative z-10">
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-semibold mb-6">
-                  {t("contact.badge")}
+                  Kontakt
                 </span>
                 <h1 className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-6">
-                  {t("contact.title")}
+                  Skontaktuj się z nami
                 </h1>
                 <p className="text-xl text-secondary-foreground/80">
-                  {t("contact.description")}
+                  Masz pytania? Chętnie pomożemy! Wypełnij formularz lub zadzwoń - odpowiemy w ciągu 24 godzin.
                 </p>
               </div>
 
@@ -73,21 +73,23 @@ export const KontaktPage = () => {
                 {contactInfo.map((item, index) => (
                   <div 
                     key={index}
-                    className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-card/80 transition-colors"
+                    className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-card/80 transition-colors border border-border"
                   >
-                    <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <div className="text-sm text-secondary-foreground/70 mb-1">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-1">
                       {item.title}
                     </div>
                     {item.href ? (
                       <a 
                         href={item.href}
-                        className="text-sm font-medium text-secondary-foreground hover:text-primary transition-colors"
+                        className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <div className="text-sm font-medium text-secondary-foreground">
+                      <div className="text-sm font-medium text-foreground">
                         {item.value}
                       </div>
                     )}
