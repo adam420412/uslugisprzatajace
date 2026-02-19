@@ -1,4 +1,4 @@
-import { Sparkles, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Sparkles, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -61,12 +61,6 @@ export const Footer = () => {
                 </div>
                 <span className="font-medium">kontakt@uslugisprzatajace.com.pl</span>
               </a>
-              <div className="flex items-center gap-3 text-background/60">
-                <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <span>ul. Przykładowa 10, 00-001 Warszawa</span>
-              </div>
             </div>
           </div>
 
