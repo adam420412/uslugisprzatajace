@@ -38,7 +38,7 @@ const Index = () => {
             "name": "Usługi Sprzątające",
             "description": "Profesjonalne usługi sprzątania biur, mieszkań i obiektów przemysłowych",
             "url": "https://uslugisprzatajace.com.pl",
-            "telephone": "+48123456789",
+            "telephone": "+48575743443",
             "email": "kontakt@uslugisprzatajace.com.pl",
             "address": {
               "@type": "PostalAddress",

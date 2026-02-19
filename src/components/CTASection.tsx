@@ -77,9 +77,9 @@ export const CTASection = () => {
               className="border-white/30 text-white hover:bg-white/10 bg-transparent"
               asChild
             >
-              <a href="tel:+48123456789">
+              <a href="tel:+48575743443">
                 <Phone className="w-5 h-5 mr-2" />
-                +48 123 456 789
+                +48 575 743 443
               </a>
             </Button>
           </div>

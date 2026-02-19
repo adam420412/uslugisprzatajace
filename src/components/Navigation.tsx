@@ -76,11 +76,11 @@ export const Navigation = () => {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher isScrolled={true} />
             <a
-              href="tel:+48123456789"
+              href="tel:+48575743443"
               className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary text-foreground"
             >
               <Phone className="w-4 h-4" />
-              +48 123 456 789
+              +48 575 743 443
             </a>
             <Button variant="cta" size="default" asChild>
               <Link to="/kontakt">Bezpłatna wycena</Link>
@@ -120,11 +120,11 @@ export const Navigation = () => {
               ))}
               <div className="pt-4 border-t border-border space-y-3">
                 <a
-                  href="tel:+48123456789"
+                  href="tel:+48575743443"
                   className="flex items-center gap-2 text-foreground"
                 >
                   <Phone className="w-4 h-4" />
-                  +48 123 456 789
+                  +48 575 743 443
                 </a>
                 <Button variant="cta" className="w-full" asChild>
                   <Link to="/kontakt">Bezpłatna wycena</Link>

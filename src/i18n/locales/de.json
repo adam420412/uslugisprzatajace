@@ -309,7 +309,7 @@
     "items": {
       "order": {
         "question": "Wie bestelle ich einen Reinigungsservice?",
-        "answer": "Rufen Sie einfach +48 123 456 789 an oder füllen Sie das Kontaktformular auf unserer Website aus. Wir antworten innerhalb von 24 Stunden und vereinbaren eine kostenlose Bewertung."
+        "answer": "Rufen Sie einfach +48 575 743 443 an oder füllen Sie das Kontaktformular auf unserer Website aus. Wir antworten innerhalb von 24 Stunden und vereinbaren eine kostenlose Bewertung."
       },
       "quote": {
         "question": "Ist die Bewertung kostenlos?",
@@ -362,7 +362,7 @@
       "name": "Name",
       "namePlaceholder": "Max Mustermann",
       "phone": "Telefon",
-      "phonePlaceholder": "+49 123 456 789",
+      "phonePlaceholder": "+48 575 743 443",
       "email": "E-Mail",
       "emailPlaceholder": "max@beispiel.de",
       "service": "Serviceart",

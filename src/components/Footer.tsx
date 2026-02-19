@@ -49,11 +49,11 @@ export const Footer = () => {
             
             {/* Contact info */}
             <div className="space-y-4">
-              <a href="tel:+48123456789" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
+              <a href="tel:+48575743443" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </div>
-                <span className="font-medium">+48 123 456 789</span>
+                <span className="font-medium">+48 575 743 443</span>
               </a>
               <a href="mailto:kontakt@uslugisprzatajace.com.pl" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center">
