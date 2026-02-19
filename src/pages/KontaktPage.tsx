@@ -1,13 +1,14 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactCards = [
   {
@@ -27,14 +28,6 @@ const contactCards = [
     primary: false,
   },
   {
-    icon: MapPin,
-    title: "Adres",
-    value: "ul. Przykładowa 10",
-    description: "00-001 Warszawa",
-    href: null,
-    primary: false,
-  },
-  {
     icon: Clock,
     title: "Godziny pracy",
     value: "Pon-Pt: 7:00-20:00",
@@ -49,19 +42,46 @@ export const KontaktPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+
+    const form = formRef.current;
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const email = (formData.get("email") as string) || "";
+    const service_type = (formData.get("service_type") as string) || null;
+    const message = (formData.get("message") as string) || "";
+
+    const { error } = await supabase.from("leads").insert({
+      name,
+      phone,
+      email,
+      service_type,
+      message,
+    });
+
+    setIsSubmitting(false);
+
+    if (error) {
       toast({
-        title: "Wiadomość wysłana!",
-        description: "Odpowiemy w ciągu 24 godzin.",
+        title: "Błąd wysyłania",
+        description: "Spróbuj ponownie lub zadzwoń do nas.",
+        variant: "destructive",
       });
-    }, 1500);
+      return;
+    }
+
+    setIsSubmitted(true);
+    toast({
+      title: "Wiadomość wysłana!",
+      description: "Odpowiemy w ciągu 24 godzin.",
+    });
   };
 
   return (
@@ -104,7 +124,7 @@ export const KontaktPage = () => {
           {/* Contact Cards */}
           <section className="bg-foreground pb-20">
             <div className="container-narrow mx-auto px-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid sm:grid-cols-3 gap-4">
                 {contactCards.map((card, index) => {
                   const CardIcon = card.icon;
                   return (
@@ -169,13 +189,14 @@ export const KontaktPage = () => {
                       </Button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-foreground mb-2">
                             Imię i nazwisko *
                           </label>
                           <Input
+                            name="name"
                             type="text"
                             placeholder="Jan Kowalski"
                             required
@@ -187,6 +208,7 @@ export const KontaktPage = () => {
                             Telefon *
                           </label>
                           <Input
+                            name="phone"
                             type="tel"
                             placeholder="+48 575 743 443"
                             required
@@ -200,6 +222,7 @@ export const KontaktPage = () => {
                           Email
                         </label>
                         <Input
+                          name="email"
                           type="email"
                           placeholder="jan@firma.pl"
                           className="h-12 rounded-xl"
@@ -210,7 +233,7 @@ export const KontaktPage = () => {
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Rodzaj usługi
                         </label>
-                        <select className="w-full h-12 rounded-xl border border-input bg-background px-3 text-foreground">
+                        <select name="service_type" className="w-full h-12 rounded-xl border border-input bg-background px-3 text-foreground">
                           <option value="">Wybierz usługę</option>
                           <option value="biuro">Sprzątanie biur</option>
                           <option value="mieszkanie">Sprzątanie mieszkań</option>
@@ -227,6 +250,7 @@ export const KontaktPage = () => {
                           Wiadomość
                         </label>
                         <Textarea
+                          name="message"
                           placeholder="Opisz swoje potrzeby - metraż, częstotliwość, specjalne wymagania..."
                           rows={5}
                           className="rounded-xl"
@@ -297,19 +321,6 @@ export const KontaktPage = () => {
                     </ul>
                   </div>
 
-                  {/* Map */}
-                  <div className="h-80 rounded-3xl overflow-hidden border border-border">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.3913185268424!2d21.00732731580091!3d52.23194506437542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Lokalizacja na mapie"
-                    />
-                  </div>
                 </div>
               </div>
             </div>

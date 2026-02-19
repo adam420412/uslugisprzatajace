@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 
@@ -24,12 +24,6 @@ export const ContactSection = () => {
       labelKey: "contact.email",
       value: "kontakt@uslugisprzatajace.com.pl",
       href: "mailto:kontakt@uslugisprzatajace.com.pl",
-    },
-    {
-      icon: MapPin,
-      labelKey: "contact.address",
-      value: "ul. Czysta 15, 00-001 Warszawa",
-      href: "#",
     },
     {
       icon: Clock,
