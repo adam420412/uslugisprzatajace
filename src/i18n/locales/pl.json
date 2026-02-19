@@ -309,7 +309,7 @@
     "items": {
       "order": {
         "question": "Jak zamówić usługę sprzątania?",
-        "answer": "Wystarczy zadzwonić pod numer +48 123 456 789 lub wypełnić formularz kontaktowy na naszej stronie. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę."
+        "answer": "Wystarczy zadzwonić pod numer +48 575 743 443 lub wypełnić formularz kontaktowy na naszej stronie. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę."
       },
       "quote": {
         "question": "Czy wycena jest bezpłatna?",
@@ -362,7 +362,7 @@
       "name": "Imię i nazwisko",
       "namePlaceholder": "Jan Kowalski",
       "phone": "Telefon",
-      "phonePlaceholder": "+48 123 456 789",
+      "phonePlaceholder": "+48 575 743 443",
       "email": "Email",
       "emailPlaceholder": "jan@przykład.pl",
       "service": "Rodzaj usługi",

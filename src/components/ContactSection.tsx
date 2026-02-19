@@ -16,14 +16,14 @@ export const ContactSection = () => {
     {
       icon: Phone,
       labelKey: "contact.phone",
-      value: "+48 123 456 789",
-      href: "tel:+48123456789",
+      value: "+48 575 743 443",
+      href: "tel:+48575743443",
     },
     {
       icon: Mail,
       labelKey: "contact.email",
-      value: "kontakt@domblasku.pl",
-      href: "mailto:kontakt@domblasku.pl",
+      value: "kontakt@uslugisprzatajace.com.pl",
+      href: "mailto:kontakt@uslugisprzatajace.com.pl",
     },
     {
       icon: MapPin,

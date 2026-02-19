@@ -13,9 +13,9 @@ const contactCards = [
   {
     icon: Phone,
     title: "Telefon",
-    value: "+48 123 456 789",
+    value: "+48 575 743 443",
     description: "Pon-Pt: 7:00-20:00",
-    href: "tel:+48123456789",
+    href: "tel:+48575743443",
     primary: true,
   },
   {
@@ -188,7 +188,7 @@ export const KontaktPage = () => {
                           </label>
                           <Input
                             type="tel"
-                            placeholder="+48 123 456 789"
+                            placeholder="+48 575 743 443"
                             required
                             className="h-12 rounded-xl"
                           />

@@ -15,7 +15,7 @@ export const FAQSection = () => {
       questionKey: "faq.items.order.question",
       answerKey: "faq.items.order.answer",
       fallbackQ: "Jak zamówić usługę sprzątania?",
-      fallbackA: "Wystarczy zadzwonić pod numer +48 123 456 789 lub wypełnić formularz kontaktowy na naszej stronie. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę.",
+      fallbackA: "Wystarczy zadzwonić pod numer +48 575 743 443 lub wypełnić formularz kontaktowy na naszej stronie. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę.",
     },
     {
       questionKey: "faq.items.quote.question",
@@ -132,14 +132,14 @@ export const FAQSection = () => {
             
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:+48123456789"
+                href="tel:+48575743443"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                +48 123 456 789
+                +48 575 743 443
               </a>
               <a
-                href="mailto:kontakt@domblasku.pl"
+                href="mailto:kontakt@uslugisprzatajace.com.pl"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl font-semibold hover:bg-muted/80 transition-colors"
               >
                 <Mail className="w-5 h-5" />

@@ -14,7 +14,7 @@ const faqCategories = [
     questions: [
       {
         q: "Jak zamówić usługę sprzątania?",
-        a: "Wystarczy zadzwonić pod numer +48 123 456 789 lub wypełnić formularz kontaktowy. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę.",
+        a: "Wystarczy zadzwonić pod numer +48 575 743 443 lub wypełnić formularz kontaktowy. Odpowiemy w ciągu 24 godzin i umówimy się na bezpłatną wycenę.",
       },
       {
         q: "Czy wycena jest bezpłatna?",
@@ -244,9 +244,9 @@ export const FAQPage = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="cta" size="lg" asChild>
-                    <a href="tel:+48123456789">
+                    <a href="tel:+48575743443">
                       <Phone className="w-5 h-5 mr-2" />
-                      +48 123 456 789
+                      +48 575 743 443
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
