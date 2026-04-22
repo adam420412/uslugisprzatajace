@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Profesjonalne Usługi Sprzątające | uslugisprzatajace.com.pl</title>
+        <title>Usługi Sprzątające | uslugisprzatajace.com.pl</title>
         <meta 
           name="description" 
           content="Profesjonalne usługi sprzątania biur, mieszkań i obiektów przemysłowych. Ekologiczne środki, doświadczony zespół, bezpłatna wycena w 24h. Zadzwoń!" 
