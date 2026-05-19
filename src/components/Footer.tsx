@@ -61,6 +61,10 @@ export const Footer = () => {
                 </div>
                 <span className="font-medium">kontakt@uslugisprzatajace.com.pl</span>
               </a>
+              <div className="flex items-center gap-3 text-background/80">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span>Mikołaja Reja 20, 80-404 Gdańsk</span>
+              </div>
             </div>
           </div>
 
