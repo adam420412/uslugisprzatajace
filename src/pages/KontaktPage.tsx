@@ -87,10 +87,10 @@ export const KontaktPage = () => {
   return (
     <>
       <Helmet>
-        <title>Kontakt | uslugisprzatajace.com.pl</title>
+        <title>Kontakt | Firma Sprzątająca Gdańsk - Usługi Sprzątające</title>
         <meta 
           name="description" 
-          content="Skontaktuj się z nami - profesjonalne usługi sprzątania. Zadzwoń, napisz lub wypełnij formularz. Odpowiemy w 24h!" 
+          content="Potrzebujesz sprzątania w Gdańsku? Skontaktuj się z nami! Szybka wycena sprzątania biur, mieszkań i obiektów komercyjnych. Zadzwoń lub napisz." 
         />
         <link rel="canonical" href="https://uslugisprzatajace.com.pl/kontakt" />
       </Helmet>
