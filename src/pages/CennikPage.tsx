@@ -72,10 +72,10 @@ export const CennikPage = () => {
   return (
     <>
       <Helmet>
-        <title>Cennik Usług Sprzątania | uslugisprzatajace.com.pl</title>
+        <title>Cennik Sprzątania Gdańsk | Koszt Usług Sprzątających</title>
         <meta 
           name="description" 
-          content="Sprawdź cennik usług sprzątania. Transparentne ceny, brak ukrytych kosztów. Zamów bezpłatną wycenę." 
+          content="Sprawdź cennik usług sprzątających w Gdańsku. Transparentne stawki za sprzątanie biur, mieszkań, hoteli i hal. Zamów darmową wycenę online już dziś!" 
         />
         <link rel="canonical" href="https://uslugisprzatajace.com.pl/cennik" />
       </Helmet>
