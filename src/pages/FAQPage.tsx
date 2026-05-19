@@ -104,10 +104,10 @@ export const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ - Najczęstsze Pytania | uslugisprzatajace.com.pl</title>
+        <title>Sprzątanie Gdańsk - FAQ | Usługi Sprzątające Pytania i Odpowiedzi</title>
         <meta 
           name="description" 
-          content="Odpowiedzi na najczęściej zadawane pytania o usługi sprzątania. Dowiedz się więcej o naszych usługach, cenach i gwarancjach." 
+          content="Masz pytania o sprzątanie w Gdańsku? Poznaj odpowiedzi dotyczące terminów, cen oraz zakresu sprzątania obiektów biurowych i prywatnych. Sprawdź!" 
         />
         <link rel="canonical" href="https://uslugisprzatajace.com.pl/faq" />
       </Helmet>
