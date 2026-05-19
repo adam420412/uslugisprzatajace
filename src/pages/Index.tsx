@@ -12,10 +12,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Usługi Sprzątające | uslugisprzatajace.com.pl</title>
+        <title>Profesjonalna Firma Sprzątająca Gdańsk | Usługi Sprzątające</title>
         <meta 
           name="description" 
-          content="Profesjonalne usługi sprzątania biur, mieszkań i obiektów przemysłowych. Ekologiczne środki, doświadczony zespół, bezpłatna wycena w 24h. Zadzwoń!" 
+          content="Szukasz firmy sprzątającej w Gdańsku? Oferujemy profesjonalne sprzątanie biur, mieszkań, hal i hoteli. Sprawdź naszą ofertę i zamów szybką wycenę!" 
         />
         <meta 
           name="keywords" 
@@ -24,7 +24,7 @@ const Index = () => {
         <link rel="canonical" href="https://uslugisprzatajace.com.pl" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Profesjonalne Usługi Sprzątające | uslugisprzatajace.com.pl" />
+        <meta property="og:title" content="Profesjonalna Firma Sprzątająca Gdańsk | Usługi Sprzątające" />
         <meta property="og:description" content="Profesjonalne usługi sprzątania dla firm i osób prywatnych. Bezpłatna wycena w 24h." />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pl_PL" />
@@ -42,8 +42,8 @@ const Index = () => {
             "email": "kontakt@uslugisprzatajace.com.pl",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "ul. Przykładowa 10",
-              "addressLocality": "Warszawa",
+              "streetAddress": "ul. Mikołaja Reja 20",
+              "addressLocality": "Gdańsk",
               "postalCode": "00-001",
               "addressCountry": "PL"
             },
