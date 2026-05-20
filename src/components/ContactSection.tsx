@@ -24,12 +24,8 @@ export const ContactSection = () => {
       labelKey: "contact.email",
       value: "kontakt@uslugisprzatajace.com.pl",
       href: "mailto:kontakt@uslugisprzatajace.com.pl",
-    },    {
-      icon: MapPin,
-      labelKey: "contact.address",
-      value: "Mikołaja Reja 20, 80-404 Gdańsk",
-      href: "#",
     },
+
     {
       icon: Clock,
       labelKey: "contact.hours",
